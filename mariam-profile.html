@@ -141,9 +141,87 @@
             margin: 0 auto 2rem auto;
         }
         
-        /* تم حذف التأثيرات المتحركة للجوالات */
+        /* الأيقونات المتحركة */
+        .floating-icons {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 1;
+            overflow: hidden;
+        }
         
-        /* تم حذف الحركة للجوالات */
+        .floating-icon {
+            position: absolute;
+            font-size: 2rem;
+            opacity: 0.7;
+            animation: float 6s ease-in-out infinite;
+        }
+        
+        .floating-icon:nth-child(1) { top: 10%; left: 10%; animation-delay: 0s; }
+        .floating-icon:nth-child(2) { top: 20%; left: 80%; animation-delay: 1s; }
+        .floating-icon:nth-child(3) { top: 60%; left: 15%; animation-delay: 2s; }
+        .floating-icon:nth-child(4) { top: 70%; left: 85%; animation-delay: 3s; }
+        .floating-icon:nth-child(5) { top: 40%; left: 5%; animation-delay: 4s; }
+        .floating-icon:nth-child(6) { top: 30%; left: 90%; animation-delay: 5s; }
+        .floating-icon:nth-child(7) { top: 80%; left: 25%; animation-delay: 1.5s; }
+        .floating-icon:nth-child(8) { top: 15%; left: 60%; animation-delay: 2.5s; }
+        .floating-icon:nth-child(9) { top: 50%; left: 95%; animation-delay: 3.5s; }
+        .floating-icon:nth-child(10) { top: 85%; left: 70%; animation-delay: 4.5s; }
+        
+        @keyframes float {
+            0%, 100% { 
+                transform: translateY(0px) rotate(0deg);
+                opacity: 0.7;
+            }
+            25% { 
+                transform: translateY(-20px) rotate(5deg);
+                opacity: 1;
+            }
+            50% { 
+                transform: translateY(-10px) rotate(-3deg);
+                opacity: 0.8;
+            }
+            75% { 
+                transform: translateY(-15px) rotate(2deg);
+                opacity: 0.9;
+            }
+        }
+        
+        /* استجابة للجوالات */
+        @media (max-width: 768px) {
+            .floating-icons {
+                display: none;
+            }
+            
+            .container {
+                padding: 1rem;
+            }
+            
+            .profile-card {
+                margin: 1rem auto;
+                padding: 1rem;
+            }
+            
+            .sections-grid {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+            }
+            
+            .section {
+                padding: 1.5rem;
+            }
+            
+            .title {
+                font-size: 1.8rem;
+            }
+            
+            .subtitle {
+                font-size: 1rem;
+            }
+        }
         
         .profile-card:hover {
             transform: scale(1.02) rotate(1deg);
@@ -691,18 +769,22 @@
 <body>
     <!-- تم حذف الأيقونات المتحركة للجوالات -->
     
-    <!-- زر الرجوع -->
-    <div class="fixed top-4 left-4 z-50">
-        <a href="index.html" class="bg-gradient-to-r from-blue-600 to-purple-600 text-white px-6 py-3 rounded-full font-bold shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300 flex items-center gap-2" style="
-            animation: closeButtonFloat 3s ease-in-out infinite;
-            backdrop-filter: blur(10px);
-            border: 2px solid rgba(255, 255, 255, 0.3);
-        ">
-            <span class="text-xl">🏠</span>
-            <span>العودة للصفحة الرئيسية</span>
-        </a>
-    </div>
+    <!-- تم حذف مربع العودة للجوالات -->
 
+    <!-- الأيقونات المتحركة -->
+    <div class="floating-icons">
+        <div class="floating-icon">📚</div>
+        <div class="floating-icon">✏️</div>
+        <div class="floating-icon">🎨</div>
+        <div class="floating-icon">📖</div>
+        <div class="floating-icon">🌟</div>
+        <div class="floating-icon">🏆</div>
+        <div class="floating-icon">💡</div>
+        <div class="floating-icon">🎯</div>
+        <div class="floating-icon">🚀</div>
+        <div class="floating-icon">⭐</div>
+    </div>
+    
     <div class="container">
         <!-- العنوان -->
         <div class="header">
