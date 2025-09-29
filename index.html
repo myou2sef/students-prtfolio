@@ -1,0 +1,2092 @@
+<!--
+    نظام توثيق إنجازات قسم التربية الخاصة
+    مدرسة المعيريض الثانوية بنات
+    
+    هيكل الملفات المطلوب:
+    D:\school\
+    ├── index.html (الملف الرئيسي)
+    ├── images\
+    │   ├── ministry_logo.png (شعار وزارة التربية والتعليم)
+    │   ├── school_logo.png (شعار المدرسة)
+    │   ├── student1_thumb.jpg
+    │   ├── student1_work1.jpg
+    │   └── ... (صور الطالبات)
+    ├── videos\
+    │   ├── student1_presentation.mp4
+    │   └── ... (فيديوهات الطالبات)
+    └── docs\
+        ├── student1_report.pdf
+        └── ... (ملفات PDF)
+        
+    ملاحظات:
+    - ضع شعار وزارة التربية والتعليم في: images/ministry_logo.png
+    - ضع شعار المدرسة في: images/school_logo.png
+    - جميع الصور والفيديوهات والملفات في المجلدات المحددة
+    - النظام يعمل محلياً بدون حاجة للإنترنت
+    
+    تحذير Tailwind CSS:
+    - التحذير "cdn.tailwindcss.com should not be used in production" غير مهم للتطوير المحلي
+    - هذا التحذير يظهر فقط عند استخدام CDN في الإنتاج
+    - للتطوير المحلي والاستخدام الداخلي، CDN مناسب تماماً
+    - يمكن تجاهل هذا التحذير بأمان للتطوير المحلي
+    - هذا التحذير لا يؤثر على عمل النظام
+    - تم إضافة إعدادات مخصصة لتحسين الأداء
+    
+    ملاحظة مهمة:
+    - هذا التحذير طبيعي ومتوقع عند استخدام Tailwind CSS عبر CDN
+    - لا يؤثر على عمل النظام بأي شكل من الأشكال
+    - يمكن تجاهله بأمان للتطوير المحلي والاستخدام الداخلي
+    - إذا كنت تخطط للنشر على الإنترنت، يُنصح بتثبيت Tailwind محلياً
+    
+    تحذيرات إضافية:
+    - "Experimental features" - طبيعي عند استخدام إعدادات متقدمة
+    - "optimizeUniversalDefaults" - إعداد تجريبي لتحسين الأداء
+    - هذه التحذيرات لا تؤثر على عمل النظام
+    - يمكن تجاهلها بأمان للتطوير المحلي
+    
+    ملفات الوسائط:
+    - تم إنشاء ملفات مؤقتة للصور والفيديوهات وملفات PDF
+    - استبدل هذه الملفات بالملفات الحقيقية عند توفرها
+    - الصور الحالية هي صور SVG بديلة للعرض
+    - الفيديوهات وملفات PDF هي ملفات نصية مؤقتة
+-->
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>إنجازات قسم التربية الخاصة - مدرسة المعيريض الثانوية بنات</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        // إعدادات Tailwind CSS مخصصة
+        tailwind.config = {
+            // إعدادات مخصصة لتحسين الأداء
+            corePlugins: {
+                preflight: true,
+            },
+            theme: {
+                extend: {
+                    fontFamily: {
+                        'cairo': ['Cairo', 'sans-serif'],
+                    }
+                }
+            }
+        }
+        
+        // إخفاء تحذير Tailwind CSS (للتطوير المحلي فقط)
+        // ملاحظة: هذا التحذير غير مهم للتطوير المحلي
+        // يمكن تجاهله بأمان
+        
+        // تحذيرات Tailwind CSS:
+        // 1. "cdn.tailwindcss.com should not be used in production" - طبيعي للتطوير المحلي
+        // 2. "Experimental features" - طبيعي عند استخدام إعدادات متقدمة
+        // هذه التحذيرات لا تؤثر على عمل النظام
+        
+        // إعدادات إضافية لتحسين الأداء
+        if (typeof tailwind !== 'undefined') {
+            tailwind.config = {
+                ...tailwind.config,
+                // إعدادات آمنة لتحسين الأداء
+                future: {
+                    hoverOnlyWhenSupported: true,
+                }
+            };
+        }
+    </script>
+    <style>
+        /* Import Google Fonts for beautiful Arabic typography */
+        @import url('https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;900&display=swap');
+        
+        /* Custom RTL styles and Arabic font optimization */
+        body {
+            font-family: 'Cairo', 'Segoe UI', Tahoma, Arial, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background-image: url('images/unnamed.webp');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-blend-mode: overlay;
+            min-height: 100vh;
+        }
+        
+        /* Color overlay for background image */
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            opacity: 0.95;
+            z-index: -1;
+            pointer-events: none;
+        }
+        
+        /* Animated background particles */
+        .bg-animated {
+            background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+            background-size: 400% 400%;
+            animation: gradientShift 15s ease infinite;
+        }
+        
+        @keyframes gradientShift {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+        
+        /* Floating particles animation */
+        .particles {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 1;
+        }
+        
+        .particle {
+            position: absolute;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            animation: float 6s ease-in-out infinite;
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-20px) rotate(180deg); }
+        }
+        
+        /* Glass morphism effect */
+        .glass {
+            background: rgba(255, 255, 255, 0.25);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.18);
+            box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+        }
+        
+        /* Enhanced card hover effects */
+        .student-card {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .student-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+            transition: left 0.5s;
+        }
+        
+        .student-card:hover::before {
+            left: 100%;
+        }
+        
+        .student-card:hover {
+            transform: translateY(-10px) scale(1.02);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+        }
+        
+        /* Beautiful gradient text */
+        .gradient-text {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        /* Enhanced modal design */
+        .modal {
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+        
+        .modal.show {
+            opacity: 1;
+            transform: scale(1);
+        }
+        
+        .modal-content {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15);
+        }
+        
+        /* Lightbox styles for media gallery */
+        .lightbox {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.95);
+            backdrop-filter: blur(5px);
+        }
+        
+        .lightbox-content {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            max-width: 90%;
+            max-height: 90%;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.5);
+        }
+        
+        .lightbox img, .lightbox video {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain;
+        }
+        
+        /* Enhanced media gallery */
+        .media-item {
+            transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            border-radius: 15px;
+            overflow: hidden;
+            border: 3px solid transparent;
+            background: linear-gradient(white, white) padding-box,
+                        linear-gradient(135deg, #667eea, #764ba2, #f093fb, #f5576c) border-box;
+            transform-origin: center;
+        }
+        
+        .media-item:hover {
+            transform: translateY(-5px) scale(1.02) rotate(5deg);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+            border: 3px solid;
+            border-image: linear-gradient(135deg, #667eea, #764ba2, #f093fb, #f5576c) 1;
+            animation: mediaRotate 0.6s ease-in-out;
+        }
+        
+        @keyframes mediaRotate {
+            0% {
+                transform: translateY(-5px) scale(1.02) rotate(0deg);
+            }
+            25% {
+                transform: translateY(-8px) scale(1.05) rotate(2deg);
+            }
+            50% {
+                transform: translateY(-10px) scale(1.08) rotate(5deg);
+            }
+            75% {
+                transform: translateY(-8px) scale(1.05) rotate(3deg);
+            }
+            100% {
+                transform: translateY(-5px) scale(1.02) rotate(5deg);
+            }
+        }
+        
+        /* Gradient border for student images */
+        .student-image-border {
+            position: relative;
+            border-radius: 50%;
+            padding: 4px;
+            background: linear-gradient(135deg, #667eea, #764ba2, #f093fb, #f5576c);
+        }
+        
+        .student-image-border img {
+            border-radius: 50%;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        /* Advanced Progress Bar Animation */
+        .progress-bar-animated {
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .progress-bar-animated::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.6), transparent);
+            animation: progressShine 2s infinite;
+        }
+        
+        @keyframes progressShine {
+            0% {
+                left: -100%;
+            }
+            100% {
+                left: 100%;
+            }
+        }
+        
+        /* Progress Bar Glow Effect */
+        .progress-glow {
+            box-shadow: 0 0 10px rgba(34, 197, 94, 0.5), 0 0 20px rgba(34, 197, 94, 0.3);
+        }
+        
+        /* Abstract Shapes for Cards */
+        .card-enhanced {
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .card-enhanced::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(45deg, 
+                rgba(102, 126, 234, 0.1) 0%, 
+                rgba(118, 75, 162, 0.1) 25%, 
+                rgba(240, 147, 251, 0.1) 50%, 
+                rgba(245, 87, 108, 0.1) 75%, 
+                rgba(34, 197, 94, 0.1) 100%);
+            animation: abstractRotate 20s linear infinite;
+            z-index: 0;
+        }
+        
+        .card-enhanced::after {
+            content: '';
+            position: absolute;
+            top: -30%;
+            left: -30%;
+            width: 160%;
+            height: 160%;
+            background: radial-gradient(circle, 
+                rgba(59, 130, 246, 0.15) 0%, 
+                rgba(147, 51, 234, 0.15) 30%, 
+                rgba(236, 72, 153, 0.15) 60%, 
+                transparent 100%);
+            animation: abstractPulse 15s ease-in-out infinite;
+            z-index: 0;
+        }
+        
+        .card-enhanced:hover::before {
+            animation-duration: 10s;
+        }
+        
+        .card-enhanced:hover::after {
+            animation-duration: 8s;
+        }
+        
+        .card-enhanced > * {
+            position: relative;
+            z-index: 1;
+        }
+        
+        @keyframes abstractRotate {
+            0% {
+                transform: rotate(0deg);
+            }
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+        
+        @keyframes abstractPulse {
+            0%, 100% {
+                transform: scale(1) rotate(0deg);
+                opacity: 0.3;
+            }
+            50% {
+                transform: scale(1.2) rotate(180deg);
+                opacity: 0.6;
+            }
+        }
+        
+        /* Additional Abstract Shapes */
+        .card-enhanced .abstract-shape-1 {
+            position: absolute;
+            top: 10%;
+            right: -20px;
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, rgba(255, 107, 107, 0.3), rgba(255, 142, 83, 0.3));
+            border-radius: 50% 20% 50% 20%;
+            animation: floatShape1 8s ease-in-out infinite;
+            z-index: 0;
+        }
+        
+        .card-enhanced .abstract-shape-2 {
+            position: absolute;
+            bottom: 15%;
+            left: -30px;
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, rgba(83, 82, 237, 0.3), rgba(139, 92, 246, 0.3));
+            border-radius: 30% 70% 30% 70%;
+            animation: floatShape2 10s ease-in-out infinite;
+            z-index: 0;
+        }
+        
+        .card-enhanced .abstract-shape-3 {
+            position: absolute;
+            top: 50%;
+            left: -15px;
+            width: 40px;
+            height: 40px;
+            background: linear-gradient(135deg, rgba(34, 197, 94, 0.3), rgba(16, 185, 129, 0.3));
+            border-radius: 20% 80% 20% 80%;
+            animation: floatShape3 6s ease-in-out infinite;
+            z-index: 0;
+        }
+        
+        .card-enhanced .abstract-shape-4 {
+            position: absolute;
+            top: 20%;
+            right: -25px;
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, rgba(245, 101, 101, 0.3), rgba(251, 146, 60, 0.3));
+            border-radius: 60% 40% 60% 40%;
+            animation: floatShape4 12s ease-in-out infinite;
+            z-index: 0;
+        }
+        
+        @keyframes floatShape1 {
+            0%, 100% {
+                transform: translateY(0px) rotate(0deg);
+            }
+            50% {
+                transform: translateY(-20px) rotate(180deg);
+            }
+        }
+        
+        @keyframes floatShape2 {
+            0%, 100% {
+                transform: translateY(0px) rotate(0deg) scale(1);
+            }
+            50% {
+                transform: translateY(15px) rotate(-90deg) scale(1.1);
+            }
+        }
+        
+        @keyframes floatShape3 {
+            0%, 100% {
+                transform: translateX(0px) rotate(0deg);
+            }
+            50% {
+                transform: translateX(10px) rotate(90deg);
+            }
+        }
+        
+        @keyframes floatShape4 {
+            0%, 100% {
+                transform: translateY(0px) translateX(0px) rotate(0deg);
+            }
+            50% {
+                transform: translateY(-10px) translateX(5px) rotate(270deg);
+            }
+        }
+        
+        
+        /* Beautiful buttons */
+        .btn-primary {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border: none;
+            color: white;
+            padding: 12px 24px;
+            border-radius: 25px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+        }
+        
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(102, 126, 234, 0.6);
+        }
+        
+        /* Close Button Animation */
+        .close-btn {
+            transition: all 0.2s ease;
+            transform-origin: center;
+            display: inline-block;
+        }
+        
+        .close-btn:hover {
+            animation: spin 0.5s linear infinite;
+        }
+        
+        @keyframes spin {
+            from {
+                transform: rotate(0deg);
+            }
+            to {
+                transform: rotate(360deg);
+            }
+        }
+        
+        /* Modal Animation Effects */
+        .modal-fade-in {
+            animation: modalFadeIn 0.4s ease-out;
+        }
+        
+        @keyframes modalFadeIn {
+            from {
+                opacity: 0;
+                backdrop-filter: blur(0px);
+            }
+            to {
+                opacity: 1;
+                backdrop-filter: blur(10px);
+            }
+        }
+        
+        /* Info cards with beautiful gradients */
+        .info-card {
+            border-radius: 20px;
+            padding: 24px;
+            margin-bottom: 20px;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .info-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #667eea, #764ba2);
+        }
+        
+        .info-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .issues-card {
+            background: linear-gradient(135deg, #ff9a9e 0%, #fecfef 100%);
+            color: #8b0000;
+        }
+        
+        .plan-card {
+            background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);
+            color: #006400;
+        }
+        
+        .result-card {
+            background: linear-gradient(135deg, #d299c2 0%, #fef9d7 100%);
+            color: #228b22;
+        }
+        
+        /* Custom scrollbar for RTL */
+        ::-webkit-scrollbar {
+            width: 12px;
+        }
+        
+        ::-webkit-scrollbar-track {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+        }
+        
+        ::-webkit-scrollbar-thumb {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            border-radius: 10px;
+        }
+        
+        ::-webkit-scrollbar-thumb:hover {
+            background: linear-gradient(135deg, #5a6fd8, #6a4190);
+        }
+        
+        /* Loading animation */
+        .loading {
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            border: 3px solid rgba(255, 255, 255, 0.3);
+            border-radius: 50%;
+            border-top-color: #fff;
+            animation: spin 1s ease-in-out infinite;
+        }
+        
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+        
+        /* Pulse animation for important elements */
+        .pulse {
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+        
+        /* Floating action button */
+        .fab {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            font-size: 24px;
+            cursor: pointer;
+            box-shadow: 0 8px 25px rgba(102, 126, 234, 0.4);
+            transition: all 0.3s ease;
+            z-index: 100;
+        }
+        
+        .fab:hover {
+            transform: scale(1.1);
+            box-shadow: 0 12px 35px rgba(102, 126, 234, 0.6);
+        }
+        
+        /* Enhanced animations */
+        .fade-in {
+            animation: fadeIn 0.8s ease-in-out;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .slide-in-left {
+            animation: slideInLeft 0.6s ease-out;
+        }
+        
+        @keyframes slideInLeft {
+            from { opacity: 0; transform: translateX(-50px); }
+            to { opacity: 1; transform: translateX(0); }
+        }
+        
+        .slide-in-right {
+            animation: slideInRight 0.6s ease-out;
+        }
+        
+        @keyframes slideInRight {
+            from { opacity: 0; transform: translateX(50px); }
+            to { opacity: 1; transform: translateX(0); }
+        }
+        
+        .bounce-in {
+            animation: bounceIn 0.8s ease-out;
+        }
+        
+        @keyframes bounceIn {
+            0% { opacity: 0; transform: scale(0.3); }
+            50% { opacity: 1; transform: scale(1.05); }
+            70% { transform: scale(0.9); }
+            100% { opacity: 1; transform: scale(1); }
+        }
+        
+        /* Enhanced hover effects */
+        .hover-lift {
+            transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+        
+        .hover-lift:hover {
+            transform: translateY(-8px) scale(1.02);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+        }
+        
+        /* Glowing effect */
+        .glow {
+            box-shadow: 0 0 20px rgba(102, 126, 234, 0.3);
+            transition: all 0.3s ease;
+        }
+        
+        .glow:hover {
+            box-shadow: 0 0 30px rgba(102, 126, 234, 0.5);
+        }
+        
+        /* Shimmer effect */
+        .shimmer {
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .shimmer::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+            animation: shimmer 2s infinite;
+        }
+        
+        @keyframes shimmer {
+            0% { left: -100%; }
+            100% { left: 100%; }
+        }
+        
+        /* Enhanced card styles */
+        .card-enhanced {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 20px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+        
+        .card-enhanced:hover {
+            transform: translateY(-10px) scale(1.02);
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15);
+        }
+        
+        /* Progress bar animation */
+        .progress-bar {
+            width: 0%;
+            height: 4px;
+            background: linear-gradient(90deg, #667eea, #764ba2);
+            border-radius: 2px;
+            transition: width 0.5s ease;
+        }
+        
+        /* Enhanced button styles */
+        .btn-enhanced {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border: none;
+            color: white;
+            padding: 12px 24px;
+            border-radius: 25px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .btn-enhanced::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+            transition: left 0.5s;
+        }
+        
+        .btn-enhanced:hover::before {
+            left: 100%;
+        }
+        
+        .btn-enhanced:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(102, 126, 234, 0.6);
+        }
+        
+        /* Enhanced modal animations */
+        .modal-enhanced {
+            animation: modalSlideIn 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+        
+        @keyframes modalSlideIn {
+            from { opacity: 0; transform: scale(0.8) translateY(-50px); }
+            to { opacity: 1; transform: scale(1) translateY(0); }
+        }
+        
+        /* Enhanced lightbox */
+        .lightbox-enhanced {
+            animation: lightboxFadeIn 0.3s ease-out;
+        }
+        
+        @keyframes lightboxFadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        
+        /* Enhanced scrollbar */
+        .custom-scrollbar::-webkit-scrollbar {
+            width: 8px;
+        }
+        
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+        }
+        
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            border-radius: 10px;
+        }
+        
+        .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+            background: linear-gradient(135deg, #5a6fd8, #6a4190);
+        }
+        
+        /* Header responsive design */
+        @media (max-width: 768px) {
+            .header-flex {
+                flex-direction: column;
+                text-align: center;
+                gap: 1rem;
+            }
+            
+            .header-flex > div {
+                width: 100%;
+                justify-content: center;
+            }
+            
+            .header-flex .text-right {
+                text-align: center;
+            }
+        }
+        
+        /* Logo containers */
+        .logo-container {
+            transition: transform 0.3s ease;
+        }
+        
+        /* Stunning Header Effects */
+        .header-glow {
+            box-shadow: 0 0 50px rgba(147, 51, 234, 0.3), 0 0 100px rgba(59, 130, 246, 0.2);
+        }
+        
+        .text-glow {
+            text-shadow: 0 0 20px rgba(255, 255, 255, 0.5), 0 0 40px rgba(147, 51, 234, 0.3);
+        }
+        
+        .floating-shapes {
+            animation: float 6s ease-in-out infinite;
+        }
+        
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0px) rotate(0deg);
+            }
+            50% {
+                transform: translateY(-20px) rotate(180deg);
+            }
+        }
+        
+        .gradient-border {
+            background: linear-gradient(45deg, #ff6b6b, #4ecdc4, #45b7d1, #96ceb4, #feca57);
+            background-size: 300% 300%;
+            animation: gradientShift 3s ease infinite;
+        }
+        
+        @keyframes gradientShift {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+        
+        .glassmorphism {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+        }
+        
+        .neon-glow {
+            box-shadow: 
+                0 0 5px rgba(147, 51, 234, 0.5),
+                0 0 10px rgba(147, 51, 234, 0.4),
+                0 0 15px rgba(147, 51, 234, 0.3),
+                0 0 20px rgba(147, 51, 234, 0.2);
+        }
+        
+        .rainbow-text {
+            background: linear-gradient(45deg, #ff6b6b, #4ecdc4, #45b7d1, #96ceb4, #feca57, #ff6b6b);
+            background-size: 400% 400%;
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: rainbow 3s ease infinite;
+        }
+        
+        @keyframes rainbow {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+        
+        /* Compact Header Enhancements */
+        .stats-card {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            transition: all 0.3s ease;
+        }
+        
+        .stats-card:hover {
+            background: rgba(255, 255, 255, 0.15);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+        }
+        
+        .floating-icon {
+            animation: floatIcon 3s ease-in-out infinite;
+        }
+        
+        @keyframes floatIcon {
+            0%, 100% {
+                transform: translateY(0px);
+            }
+            50% {
+                transform: translateY(-5px);
+            }
+        }
+        
+        .pulse-glow {
+            animation: pulseGlow 2s ease-in-out infinite;
+        }
+        
+        @keyframes pulseGlow {
+            0%, 100% {
+                box-shadow: 0 0 5px rgba(147, 51, 234, 0.3);
+            }
+            50% {
+                box-shadow: 0 0 20px rgba(147, 51, 234, 0.6);
+            }
+        }
+        
+        .gradient-text-animated {
+            background: linear-gradient(45deg, #ff6b6b, #4ecdc4, #45b7d1, #96ceb4, #feca57);
+            background-size: 400% 400%;
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: gradientText 3s ease infinite;
+        }
+        
+        @keyframes gradientText {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+        
+        /* Modern Photo Slider */
+        .photo-slider-modal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.9);
+            display: none;
+            align-items: center;
+            justify-content: center;
+            z-index: 2000;
+            backdrop-filter: blur(10px);
+        }
+        
+        .slider-modal-content {
+            width: 90%;
+            max-width: 800px;
+            height: 80vh;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.3);
+            position: relative;
+        }
+        
+        .slider-header {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(20px);
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        
+        .slider-title {
+            color: white;
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+        
+        .slider-close {
+            background: rgba(255, 255, 255, 0.2);
+            border: none;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            color: white;
+            font-size: 1.2rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .slider-close:hover {
+            background: rgba(255, 255, 255, 0.3);
+            transform: scale(1.1);
+        }
+        
+        .modern-slider-container {
+            position: relative;
+            height: calc(100% - 80px);
+            overflow: hidden;
+        }
+        
+        .modern-slides {
+            display: flex;
+            height: 100%;
+            transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        .modern-slide {
+            min-width: 100%;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .modern-slide img {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain;
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        }
+        
+        .slide-info {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(transparent, rgba(0, 0, 0, 0.8));
+            color: white;
+            padding: 2rem 1rem 1rem;
+            text-align: center;
+        }
+        
+        .slide-title {
+            font-size: 1.2rem;
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+        }
+        
+        .slide-description {
+            font-size: 0.9rem;
+            opacity: 0.9;
+        }
+        
+        .modern-nav {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(255, 255, 255, 0.2);
+            border: none;
+            border-radius: 50%;
+            width: 60px;
+            height: 60px;
+            color: white;
+            font-size: 1.5rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .modern-nav:hover {
+            background: rgba(255, 255, 255, 0.3);
+            transform: translateY(-50%) scale(1.1);
+        }
+        
+        .modern-nav.prev {
+            left: 20px;
+        }
+        
+        .modern-nav.next {
+            right: 20px;
+        }
+        
+        .modern-dots {
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 10px;
+        }
+        
+        .modern-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.3);
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .modern-dot.active {
+            background: rgba(255, 255, 255, 0.9);
+            transform: scale(1.3);
+        }
+        
+        .modern-dot:hover {
+            background: rgba(255, 255, 255, 0.6);
+        }
+    </style>
+</head>
+<body class="min-h-screen relative overflow-x-hidden">
+    <!-- Animated Background Particles -->
+    <div class="particles" id="particles"></div>
+    
+    
+    <!-- Stunning Header Section -->
+    <header class="relative z-10 overflow-hidden">
+        <!-- Animated Background -->
+        <div class="absolute inset-0 bg-gradient-to-br from-purple-900 via-blue-900 to-indigo-900"></div>
+        <div class="absolute inset-0 bg-gradient-to-r from-pink-500/20 via-purple-500/20 to-cyan-500/20 animate-pulse"></div>
+        
+        <!-- Floating Geometric Shapes -->
+        <div class="absolute top-10 left-10 w-20 h-20 bg-gradient-to-br from-pink-400 to-purple-500 rounded-full opacity-30 animate-bounce"></div>
+        <div class="absolute top-20 right-20 w-16 h-16 bg-gradient-to-br from-cyan-400 to-blue-500 transform rotate-45 opacity-40 animate-pulse"></div>
+        <div class="absolute bottom-10 left-1/4 w-12 h-12 bg-gradient-to-br from-yellow-400 to-orange-500 rounded-full opacity-50 animate-ping"></div>
+        <div class="absolute bottom-20 right-1/3 w-14 h-14 bg-gradient-to-br from-green-400 to-teal-500 transform rotate-12 opacity-35 animate-bounce"></div>
+        
+        <!-- Glassmorphism Container -->
+        <div class="relative backdrop-blur-xl bg-white/10 border border-white/20 rounded-2xl mx-4 mt-2 shadow-2xl">
+            <div class="container mx-auto px-4 py-4">
+                <!-- Compact Header Layout -->
+                <div class="header-flex flex items-center justify-between mb-2">
+                    <!-- School Logo -->
+                    <div class="flex items-center space-x-3 space-x-reverse slide-in-left group">
+                        <div class="relative">
+                            <img src="images/6741688.JPEG" 
+                                 alt="شعار المدرسة" 
+                                 class="w-32 h-32 object-contain drop-shadow-2xl group-hover:scale-105 transition-all duration-300"
+                                 onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+                            <div class="text-xl" style="display:none;">🏫</div>
+                        </div>
+                        <div class="text-white">
+                            <h2 class="text-lg font-black mb-1 bg-gradient-to-r from-white via-green-100 to-emerald-200 bg-clip-text text-transparent">
+                                مدرسة المعيريض
+                            </h2>
+                            <p class="text-sm font-bold opacity-90 bg-gradient-to-r from-emerald-200 to-teal-200 bg-clip-text text-transparent">
+                                للحلقة الثانية والثالثة بنات
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <!-- System Title -->
+                    <div class="text-center bounce-in">
+                        <div class="relative">
+                            <div class="absolute inset-0 bg-gradient-to-r from-purple-600/20 via-pink-600/20 to-blue-600/20 rounded-2xl blur-lg"></div>
+                            <div class="relative bg-white/10 backdrop-blur-sm rounded-2xl p-4 border border-white/20 shadow-xl">
+                                <h1 class="text-2xl font-black mb-1 bg-gradient-to-r from-pink-400 via-purple-400 to-cyan-400 bg-clip-text text-transparent animate-pulse">
+                                    إنجازات طلاب قسم التربية الخاصة
+                                </h1>
+                                <p class="text-base text-white font-bold mb-1 drop-shadow-lg">
+                                    مدرسة المعيريض للحلقة الثانية والثالثة - بنات
+                                </p>
+                                <p class="text-xs text-white/90 font-medium drop-shadow-md">
+                                    توثيق إنجازات الطالبات ذوات الاحتياجات الخاصة
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Ministry Logo -->
+                    <div class="flex items-center space-x-3 space-x-reverse slide-in-right group">
+                        <div class="text-white text-right">
+                            <h2 class="text-lg font-black mb-1 bg-gradient-to-r from-white via-blue-100 to-cyan-200 bg-clip-text text-transparent">
+                                وزارة التربية والتعليم
+                            </h2>
+                            <p class="text-sm font-bold opacity-90 bg-gradient-to-r from-yellow-200 to-orange-200 bg-clip-text text-transparent">
+                                الإمارات العربية المتحدة
+                            </p>
+                        </div>
+                        <div class="relative">
+                            <img src="images/logo.JPG" 
+                                 alt="شعار وزارة التربية والتعليم" 
+                                 class="w-48 h-48 object-contain drop-shadow-2xl group-hover:scale-105 transition-all duration-300"
+                                 onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+                            <div class="text-xl" style="display:none;">🏛️</div>
+                        </div>
+                    </div>
+                </div>
+                
+            
+            
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="container mx-auto px-4 py-8 relative z-10">
+        <!-- Teacher Information Section -->
+        <div class="bg-gradient-to-r from-purple-600 to-pink-600 rounded-3xl p-8 mb-8 shadow-2xl fade-in">
+            <div class="flex flex-col md:flex-row items-center justify-between space-y-6 md:space-y-0 md:space-x-8 space-x-reverse">
+                <!-- Teacher Info -->
+                <div class="flex items-center space-x-6 space-x-reverse">
+                    <div class="w-20 h-20 rounded-full overflow-hidden shadow-xl border-4 border-white">
+                        <img src="images/teachter2.png" alt="المعلمة ياسمين" class="w-full h-full object-cover">
+                    </div>
+                    <div class="text-white">
+                        <h3 class="text-2xl font-bold mb-2">المعلمة المسؤولة</h3>
+                        <p class="text-xl font-semibold mb-1">أ. ياسمين يحي محمود</p>
+                        <p class="text-lg opacity-90">معلمة التربية الخاصة</p>
+                        <p class="text-sm opacity-75">معدة التوثيق والمتابعة</p>
+                    </div>
+                </div>
+                
+                <!-- Teacher Stats -->
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                    <div class="bg-white bg-opacity-20 rounded-xl p-4 text-center backdrop-blur-sm">
+                        <div class="text-2xl font-bold text-yellow-300 mb-1">7</div>
+                        <div class="text-sm opacity-90">طالبات</div>
+                    </div>
+                    <div class="bg-white bg-opacity-20 rounded-xl p-4 text-center backdrop-blur-sm">
+                        <div class="text-2xl font-bold text-green-300 mb-1">100%</div>
+                        <div class="text-sm opacity-90">متابعة</div>
+                    </div>
+                    <div class="bg-white bg-opacity-20 rounded-xl p-4 text-center backdrop-blur-sm">
+                        <div class="text-2xl font-bold text-blue-300 mb-1">15</div>
+                        <div class="text-sm opacity-90">نشاط</div>
+                    </div>
+                    <div class="bg-white bg-opacity-20 rounded-xl p-4 text-center backdrop-blur-sm">
+                        <div class="text-2xl font-bold text-purple-300 mb-1">A+</div>
+                        <div class="text-sm opacity-90">تقييم</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Students Gallery Grid -->
+        <div id="studentsGallery" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-8">
+            <!-- Student cards will be dynamically generated here -->
+        </div>
+        
+    </main>
+
+    <!-- Student Details Modal -->
+    <div id="studentModal" class="modal fixed inset-0 bg-black bg-opacity-60 z-50 hidden">
+        <div class="flex items-center justify-center min-h-screen p-4">
+            <div class="modal-content modal-enhanced rounded-2xl shadow-2xl max-w-5xl w-full max-h-[90vh] overflow-y-auto custom-scrollbar">
+                <!-- Modal Header -->
+                <div class="flex justify-between items-center p-8 border-b border-gray-200">
+                    <h2 id="modalTitle" class="text-3xl font-bold gradient-text"></h2>
+                    <button id="closeModal" class="close-btn text-white hover:text-white text-2xl font-bold transition-all duration-300 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full w-10 h-10 flex items-center justify-center shadow-lg">
+                        ✕
+                    </button>
+                </div>
+                
+                <!-- Modal Content -->
+                <div id="modalContent" class="p-8">
+                    <!-- Student details will be dynamically generated here -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Lightbox for Media -->
+    <div id="lightbox" class="lightbox lightbox-enhanced">
+        <span class="close-lightbox absolute top-6 right-6 text-white text-5xl cursor-pointer z-10 hover:scale-110 transition-all duration-300">✕</span>
+        <div class="lightbox-content">
+            <img id="lightboxImage" class="hidden" alt="">
+            <video id="lightboxVideo" class="hidden" controls></video>
+        </div>
+    </div>
+    
+    <!-- Photo Slider Modal -->
+    <div id="photoSliderModal" class="photo-slider-modal">
+        <div class="slider-modal-content">
+            <div class="slider-header">
+                <h3 class="slider-title">📸 معرض صور مريم علي الشحي</h3>
+                <button class="slider-close" onclick="closePhotoSlider()">✕</button>
+            </div>
+            
+            <div class="modern-slider-container">
+                <div class="modern-slides" id="modernSlides">
+                    <div class="modern-slide">
+                        <img src="images/maryam/WhatsApp Image 2025-09-28 at 1.04.15 AM.jpeg" alt="صورة 1">
+                        <div class="slide-info">
+                            <div class="slide-title">مريم في المدرسة</div>
+                            <div class="slide-description">صورة جميلة لمريم في بيئة المدرسة</div>
+                        </div>
+                    </div>
+                    <div class="modern-slide">
+                        <img src="images/maryam/WhatsApp Image 2025-09-28 at 1.04.19 AM.jpeg" alt="صورة 2">
+                        <div class="slide-info">
+                            <div class="slide-title">لحظات إبداعية</div>
+                            <div class="slide-description">مريم تشارك في الأنشطة الإبداعية</div>
+                        </div>
+                    </div>
+                    <div class="modern-slide">
+                        <img src="images/maryam/WhatsApp Image 2025-09-28 at 1.04.20 AM.jpeg" alt="صورة 3">
+                        <div class="slide-info">
+                            <div class="slide-title">التركيز والانتباه</div>
+                            <div class="slide-description">مريم تركز في دراستها</div>
+                        </div>
+                    </div>
+                    <div class="modern-slide">
+                        <img src="images/maryam/WhatsApp Image 2025-09-28 at 1.04.21 AM (1).jpeg" alt="صورة 4">
+                        <div class="slide-info">
+                            <div class="slide-title">الإبداع الشعري</div>
+                            <div class="slide-description">مريم تشارك قصائدها الشعرية</div>
+                        </div>
+                    </div>
+                    <div class="modern-slide">
+                        <img src="images/maryam/WhatsApp Image 2025-09-28 at 1.04.21 AM.jpeg" alt="صورة 5">
+                        <div class="slide-info">
+                            <div class="slide-title">الابتسامة المشرقة</div>
+                            <div class="slide-description">ابتسامة مريم المليئة بالحيوية</div>
+                        </div>
+                    </div>
+                    <div class="modern-slide">
+                        <img src="images/maryam/WhatsApp Image 2025-09-28 at 1.04.22 AM.jpeg" alt="صورة 6">
+                        <div class="slide-info">
+                            <div class="slide-title">الأنشطة المدرسية</div>
+                            <div class="slide-description">مريم تشارك في الأنشطة المختلفة</div>
+                        </div>
+                    </div>
+                    <div class="modern-slide">
+                        <img src="images/maryam/WhatsApp Image 2025-09-28 at 1.04.23 AM (1).jpeg" alt="صورة 7">
+                        <div class="slide-info">
+                            <div class="slide-title">التميز والإنجاز</div>
+                            <div class="slide-description">مريم تحتفل بإنجازاتها</div>
+                        </div>
+                    </div>
+                    <div class="modern-slide">
+                        <img src="images/maryam/WhatsApp Image 2025-09-28 at 1.04.23 AM.jpeg" alt="صورة 8">
+                        <div class="slide-info">
+                            <div class="slide-title">الطموح والتفاؤل</div>
+                            <div class="slide-description">مريم تنظر للمستقبل بثقة</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Navigation Buttons -->
+                <button class="modern-nav prev" onclick="changeModernSlide(-1)">‹</button>
+                <button class="modern-nav next" onclick="changeModernSlide(1)">›</button>
+                
+                <!-- Dots Indicator -->
+                <div class="modern-dots" id="modernDots"></div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Floating Action Button -->
+    <button class="fab" onclick="scrollToTop()" title="العودة للأعلى">
+        ↑
+    </button>
+
+    <!-- JavaScript Data and Logic -->
+    <script>
+        // بيانات الطالبات - يمكن تعديلها وإضافة طالبات جديدة هنا
+        const students = {
+            "student1": {
+                "id": "student1",
+                "name": "مريم علي الشحي",
+                "class": "الصف السابع 1",
+                "dob": "2013-03-29",
+                "summary": "طالبة متميزة في الشعر العربي",
+                "issues": "تحتاج تطوير في مهارات الإلقاء والتمثيل",
+                "plan": "ورش شعرية + تدريب على الإلقاء + مشاركة في المسابقات",
+                "result": "الإنجازات:\n- الحصول على جائزة الشعر (كأس الشعراء للطفل)\n- شهادة تكريم من مدرسة المعيريض",
+                "thumbnail": "images/مريم علي.png",
+                "media": [
+                    { "type": "image", "src": "images/مريم علي.png", "caption": "صورة الطالبة مريم" },
+                    { "type": "image", "src": "images/student1_work1.jpg", "caption": "قصيدة شعرية" },
+                    { "type": "video", "src": "videos/student1_presentation.mp4", "caption": "إلقاء شعري" },
+                    { "type": "pdf", "src": "docs/student1_report.pdf", "caption": "مجموعة شعرية" }
+                ]
+            },
+            "student2": {
+                "id": "student2",
+                "name": "عائشة محمد",
+                "class": "الصف السادس ٢",
+                "dob": "2013-07-09",
+                "summary": "طالبة متميزة وموهوبة في الرسم",
+                "issues": "تحتاج تطوير في المهارات الاجتماعية",
+                "plan": "أنشطة فنية جماعية + تطوير مهارات التواصل",
+                "result": "تطور ملحوظ في التعبير الفني والمشاركة",
+                "thumbnail": "images/عائشة عبدالله.png",
+                "media": [
+                    { "type": "image", "src": "images/student2_artwork1.jpg", "caption": "لوحة فنية" },
+                    { "type": "image", "src": "images/student2_artwork2.jpg", "caption": "رسم إبداعي" },
+                    { "type": "video", "src": "videos/student2_art_process.mp4", "caption": "عملية الرسم" },
+                    { "type": "pdf", "src": "docs/student2_portfolio.pdf", "caption": "معرض الأعمال الفنية" }
+                ]
+            },
+            "student3": {
+                "id": "student3",
+                "name": "مريم خالد",
+                "class": "الصف السادس ٢",
+                "dob": "2014-10-27",
+                "summary": "طالبة مجتهدة ومتفوقة",
+                "issues": "تحتاج تطوير في المهارات الاجتماعية",
+                "plan": "أنشطة جماعية + تطوير مهارات التواصل",
+                "result": "تحسن في التفاعل الاجتماعي",
+                "thumbnail": "images/مريم خالد.png",
+                "media": [
+                    { "type": "image", "src": "images/student3_work.jpg", "caption": "عمل الطالبة" },
+                    { "type": "video", "src": "videos/student3_presentation.mp4", "caption": "عرض الطالبة" },
+                    { "type": "pdf", "src": "docs/student3_report.pdf", "caption": "تقرير التقدم" }
+                ]
+            },
+            "student4": {
+                "id": "student4",
+                "name": "شجون حسن",
+                "class": "الصف الخامس ٢",
+                "dob": "2015-08-12",
+                "summary": "طالبة موهوبة في رسم الأماكن الطبيعية والمنازل الملونة",
+                "issues": "تحتاج تطوير في المهارات الاجتماعية",
+                "plan": "أنشطة فنية جماعية + تطوير مهارات التواصل",
+                "result": "تطور ملحوظ في التعبير الفني والمشاركة",
+                "thumbnail": "images/placeholder_student.png",
+                "media": [
+                    { "type": "image", "src": "images/shogoon hassan/WhatsApp Image 2025-09-28 at 11.55.23 PM.jpeg", "caption": "رسم الأماكن الطبيعية" },
+                    { "type": "image", "src": "images/shogoon hassan/WhatsApp Image 2025-09-28 at 11.55.24 PM.jpeg", "caption": "المنازل الملونة" },
+                    { "type": "image", "src": "images/shogoon hassan/WhatsApp Image 2025-09-28 at 11.55.24 PM (1).jpeg", "caption": "أعمال فنية مميزة" }
+                ]
+            },
+            "student9": {
+                "id": "student9",
+                "name": "فاطمة وليد",
+                "class": "الصف الحادي عشر شعبة ١",
+                "dob": "2007-05-15",
+                "summary": "طالبة متفوقة ومجتهدة",
+                "issues": "تحتاج تطوير في المهارات القيادية",
+                "plan": "أنشطة قيادية + مشاريع جماعية",
+                "result": "تطور في المهارات القيادية والتنظيم",
+                "thumbnail": "images/فاطمة وليد.png",
+                "media": [
+                    { "type": "image", "src": "images/student9_leadership.jpg", "caption": "نشاط قيادي" },
+                    { "type": "video", "src": "videos/student9_presentation.mp4", "caption": "عرض الطالبة" },
+                    { "type": "pdf", "src": "docs/student9_report.pdf", "caption": "تقرير التقدم" }
+                ]
+            },
+            "student10": {
+                "id": "student10",
+                "name": "عائشة عبدالله",
+                "class": "الصف الحادي عشر شعبة ١",
+                "dob": "2007-03-20",
+                "summary": "طالبة موهوبة في التصوير والتصميم الإلكتروني",
+                "issues": "تحتاج تطوير في المهارات الاجتماعية",
+                "plan": "أنشطة فنية جماعية + تطوير مهارات التواصل",
+                "result": "تطور ملحوظ في التعبير الفني والمشاركة",
+                "thumbnail": "images/placeholder_student.png",
+                "media": [
+                    { "type": "image", "src": "images/aisha abdullah/WhatsApp Image 2025-09-28 at 11.56.41 PM.jpeg", "caption": "تصوير السماء والكواكب" },
+                    { "type": "image", "src": "images/aisha abdullah/WhatsApp Image 2025-09-28 at 11.56.41 PM (1).jpeg", "caption": "التصوير الفوتوغرافي الليلي" },
+                    { "type": "pdf", "src": "images/aisha abdullah/Photo (2).pdf", "caption": "مستندات التصميم الإلكتروني" }
+                ]
+            }
+        };
+
+        // DOM Elements
+        const studentsGallery = document.getElementById('studentsGallery');
+        const studentModal = document.getElementById('studentModal');
+        const modalTitle = document.getElementById('modalTitle');
+        const modalContent = document.getElementById('modalContent');
+        const closeModal = document.getElementById('closeModal');
+        const lightbox = document.getElementById('lightbox');
+        const lightboxImage = document.getElementById('lightboxImage');
+        const lightboxVideo = document.getElementById('lightboxVideo');
+        const closeLightbox = document.querySelector('.close-lightbox');
+
+        // Initialize the application
+        function init() {
+            createParticles();
+            renderStudentsGallery();
+            setupEventListeners();
+        }
+        
+        
+        // Create animated background particles
+        function createParticles() {
+            const particlesContainer = document.getElementById('particles');
+            const particleCount = 50;
+            
+            for (let i = 0; i < particleCount; i++) {
+                const particle = document.createElement('div');
+                particle.className = 'particle';
+                
+                // Random size between 2px and 6px
+                const size = Math.random() * 4 + 2;
+                particle.style.width = size + 'px';
+                particle.style.height = size + 'px';
+                
+                // Random position
+                particle.style.left = Math.random() * 100 + '%';
+                particle.style.top = Math.random() * 100 + '%';
+                
+                // Random animation delay
+                particle.style.animationDelay = Math.random() * 6 + 's';
+                particle.style.animationDuration = (Math.random() * 3 + 3) + 's';
+                
+                particlesContainer.appendChild(particle);
+            }
+        }
+        
+        
+        // Scroll to top function
+        function scrollToTop() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        }
+
+        // Render students gallery
+        function renderStudentsGallery() {
+            studentsGallery.innerHTML = '';
+            
+            Object.values(students).forEach((student, index) => {
+                const studentCard = createStudentCard(student);
+                // Add staggered animation delay
+                studentCard.style.animationDelay = `${index * 0.1}s`;
+                studentCard.classList.add('fade-in');
+                studentsGallery.appendChild(studentCard);
+            });
+        }
+
+        // Create student card element
+        function createStudentCard(student) {
+            const card = document.createElement('div');
+            card.className = 'card-enhanced hover-lift shimmer cursor-pointer';
+            card.onclick = () => openStudentModal(student.id);
+            
+            // تحديد رابط الصفحة الشخصية
+            let profileLink = '';
+            if (student.id === 'student1') {
+                profileLink = 'mariam-profile.html';
+            } else if (student.id === 'student2') {
+                profileLink = 'aisha-mohammed-profile.html';
+            } else if (student.id === 'student3') {
+                profileLink = 'maryam-khaled-profile.html';
+            } else if (student.id === 'student4') {
+                profileLink = 'shogoon-hassan-profile.html';
+            } else if (student.id === 'student9') {
+                profileLink = 'fatima-waleed-profile.html';
+            } else if (student.id === 'student10') {
+                profileLink = 'aisha-abdullah-profile.html';
+            }
+            
+            card.innerHTML = `
+                <!-- Abstract Shapes -->
+                <div class="abstract-shape-1"></div>
+                <div class="abstract-shape-2"></div>
+                <div class="abstract-shape-3"></div>
+                <div class="abstract-shape-4"></div>
+                
+                
+                <div class="p-8">
+                    <div class="text-center">
+                        <div class="relative mb-6">
+                            <div class="student-image-border w-32 h-32 mx-auto shadow-2xl">
+                                <img src="${student.thumbnail}" 
+                                     alt="${student.name}" 
+                                     onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+                                <div class="w-32 h-32 rounded-full mx-auto bg-gradient-to-br from-purple-500 to-pink-500 text-white text-3xl font-bold" style="display:none; position: relative;">
+                                    <span style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);">${student.name === 'شجون حسن' ? 'شجون' : student.name === 'عائشة عبدالله' ? 'عائشة' : '👩\u200d🎓'}</span>
+                                </div>
+                            </div>
+                            <div class="absolute -bottom-2 -right-2 w-8 h-8 bg-green-500 rounded-full flex items-center justify-center">
+                                <span class="text-white text-sm">✓</span>
+                            </div>
+                        </div>
+                        <h3 class="text-2xl font-bold text-gray-800 mb-3">${student.name}</h3>
+                        <p class="text-blue-600 text-sm font-medium mb-3">${student.class}</p>
+                        <p class="text-gray-600 text-sm leading-relaxed mb-4">${student.summary}</p>
+                        
+                        <!-- Advanced Progress Section -->
+                        <div class="mb-6">
+                            <div class="flex items-center justify-between mb-2">
+                                <span class="text-xs font-semibold text-gray-600">الإنجازات</span>
+                                <span class="text-xs font-bold text-green-600">95%</span>
+                            </div>
+                            <div class="relative w-full bg-gray-200 rounded-full h-3 overflow-hidden progress-bar-animated">
+                                <div class="absolute inset-0 bg-gradient-to-r from-blue-400 via-purple-500 to-pink-500 rounded-full opacity-20"></div>
+                                <div class="relative bg-gradient-to-r from-green-400 via-emerald-500 to-teal-500 h-3 rounded-full transition-all duration-2000 ease-out shadow-lg progress-glow" 
+                                     style="width: 95%">
+                                    <div class="absolute inset-0 bg-gradient-to-r from-white/30 to-transparent rounded-full"></div>
+                                    <div class="absolute top-0 left-0 w-full h-full bg-gradient-to-r from-transparent via-white/50 to-transparent rounded-full animate-pulse"></div>
+                                </div>
+                            </div>
+                            <div class="flex items-center justify-between mt-2">
+                                <div class="flex items-center space-x-2 space-x-reverse">
+                                    <div class="w-2 h-2 bg-green-400 rounded-full animate-pulse"></div>
+                                    <span class="text-xs text-gray-500">متفوقة</span>
+                                </div>
+                                <div class="text-xs text-gray-400">
+                                    ${Math.floor(Math.random() * 5 + 8)} نشاط مكتمل
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="mt-4 space-y-2">
+                            <span class="btn-enhanced inline-block text-white px-4 py-2 rounded-full text-sm font-medium">
+                                عرض التفاصيل
+                            </span>
+                            ${profileLink ? `
+                            <br>
+                            <a href="${profileLink}" target="_blank" class="inline-block bg-gradient-to-r from-pink-500 to-purple-600 text-white px-4 py-2 rounded-full text-sm font-medium hover:scale-105 transition-all duration-300 shadow-lg">
+                                🌟 الصفحة الشخصية
+                            </a>
+                            ` : ''}
+                        </div>
+                    </div>
+                </div>
+            `;
+            
+            return card;
+        }
+
+        // Open student modal
+        function openStudentModal(studentId) {
+            const student = students[studentId];
+            if (!student) return;
+
+            modalTitle.textContent = student.name;
+            modalContent.innerHTML = createStudentDetails(student);
+            
+            // Add animation classes
+            studentModal.classList.remove('hidden');
+            studentModal.classList.add('modal-fade-in');
+            
+            document.body.style.overflow = 'hidden';
+        }
+
+        // Create student details content
+        function createStudentDetails(student) {
+            return `
+                <div class="space-y-8">
+                    <!-- Student Header with Photo -->
+                    <div class="bg-gradient-to-r from-blue-500 to-purple-600 rounded-2xl p-8 text-white">
+                        <div class="flex items-center space-x-6 space-x-reverse">
+                            <div class="w-24 h-24 rounded-full overflow-hidden border-4 border-white shadow-xl">
+                                <img src="${student.thumbnail}" alt="${student.name}" class="w-full h-full object-cover">
+                            </div>
+                            <div>
+                                <h2 class="text-3xl font-bold mb-2">${student.name}</h2>
+                                <p class="text-xl opacity-90 mb-1">${student.class}</p>
+                                <p class="text-lg opacity-75">${student.summary}</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Advanced Personal Profile -->
+                    <div class="relative overflow-hidden bg-gradient-to-br from-indigo-500 via-purple-500 to-pink-500 rounded-3xl p-8 shadow-2xl">
+                        <!-- Animated Background -->
+                        <div class="absolute inset-0 bg-gradient-to-r from-blue-400/20 to-purple-400/20 animate-pulse"></div>
+                        <div class="absolute top-0 right-0 w-32 h-32 bg-white/10 rounded-full -translate-y-16 translate-x-16"></div>
+                        <div class="absolute bottom-0 left-0 w-24 h-24 bg-white/10 rounded-full translate-y-12 -translate-x-12"></div>
+                        
+                        <div class="relative z-10">
+                            <div class="flex items-center justify-between mb-8">
+                                <h3 class="text-3xl font-bold text-white flex items-center">
+                                    <div class="w-12 h-12 bg-white/20 rounded-full flex items-center justify-center mr-4 backdrop-blur-sm">
+                                        <span class="text-2xl">👤</span>
+                                    </div>
+                                    الملف الشخصي المتقدم
+                                </h3>
+                                <div class="bg-white/20 backdrop-blur-sm rounded-full px-4 py-2">
+                                    <span class="text-white font-semibold">5⭐</span>
+                                </div>
+                            </div>
+                            
+                            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                                <div class="bg-white/20 backdrop-blur-sm rounded-2xl p-6 hover:bg-white/30 transition-all duration-300 hover:scale-105">
+                                    <div class="flex items-center space-x-4 space-x-reverse mb-4">
+                                        <div class="w-12 h-12 bg-gradient-to-br from-blue-400 to-blue-600 rounded-full flex items-center justify-center shadow-lg">
+                                            <span class="text-white text-xl">🏷️</span>
+                                        </div>
+                                        <div>
+                                            <h4 class="text-white font-bold text-lg">الاسم الكامل</h4>
+                                            <p class="text-white/90 text-sm">المعلومات الشخصية</p>
+                                        </div>
+                                    </div>
+                                    <p class="text-white text-xl font-semibold">${student.name}</p>
+                                </div>
+                                
+                                <div class="bg-white/20 backdrop-blur-sm rounded-2xl p-6 hover:bg-white/30 transition-all duration-300 hover:scale-105">
+                                    <div class="flex items-center space-x-4 space-x-reverse mb-4">
+                                        <div class="w-12 h-12 bg-gradient-to-br from-green-400 to-green-600 rounded-full flex items-center justify-center shadow-lg">
+                                            <span class="text-white text-xl">🎓</span>
+                                        </div>
+                                        <div>
+                                            <h4 class="text-white font-bold text-lg">الصف الدراسي</h4>
+                                            <p class="text-white/90 text-sm">المستوى الأكاديمي</p>
+                                        </div>
+                                    </div>
+                                    <p class="text-white text-xl font-semibold">${student.class}</p>
+                                </div>
+                                
+                                ${student.dob ? `
+                                <div class="bg-white/20 backdrop-blur-sm rounded-2xl p-6 hover:bg-white/30 transition-all duration-300 hover:scale-105">
+                                    <div class="flex items-center space-x-4 space-x-reverse mb-4">
+                                        <div class="w-12 h-12 bg-gradient-to-br from-purple-400 to-purple-600 rounded-full flex items-center justify-center shadow-lg">
+                                            <span class="text-white text-xl">🎂</span>
+                                        </div>
+                                        <div>
+                                            <h4 class="text-white font-bold text-lg">تاريخ الميلاد</h4>
+                                            <p class="text-white/90 text-sm">العمر الحالي</p>
+                                        </div>
+                                    </div>
+                                    <p class="text-white text-xl font-semibold">${student.dob}</p>
+                                </div>
+                                ` : ''}
+                                
+                                <div class="bg-white/20 backdrop-blur-sm rounded-2xl p-6 hover:bg-white/30 transition-all duration-300 hover:scale-105">
+                                    <div class="flex items-center space-x-4 space-x-reverse mb-4">
+                                        <div class="w-12 h-12 bg-gradient-to-br from-red-400 to-red-600 rounded-full flex items-center justify-center shadow-lg">
+                                            <span class="text-white text-xl">🏴</span>
+                                        </div>
+                                        <div>
+                                            <h4 class="text-white font-bold text-lg">الجنسية</h4>
+                                            <p class="text-white/90 text-sm">الانتماء الوطني</p>
+                                        </div>
+                                    </div>
+                                    <p class="text-white text-xl font-semibold">الإمارات العربية المتحدة</p>
+                                </div>
+                                
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Advanced Results -->
+                    <div class="group relative overflow-hidden bg-gradient-to-br from-emerald-500 via-teal-500 to-cyan-500 rounded-3xl p-8 shadow-2xl hover:scale-105 transition-all duration-500">
+                        <div class="absolute inset-0 bg-gradient-to-r from-white/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                        <div class="absolute top-4 right-4 w-20 h-20 bg-white/20 rounded-full animate-pulse"></div>
+                        <div class="absolute bottom-4 left-4 w-16 h-16 bg-white/20 rounded-full animate-bounce"></div>
+                        <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-32 h-32 bg-white/5 rounded-full animate-ping"></div>
+                        
+                        <div class="relative z-10">
+                            <div class="flex items-center justify-between mb-6">
+                                <h3 class="text-3xl font-bold text-white flex items-center">
+                                    <div class="w-12 h-12 bg-white/20 rounded-full flex items-center justify-center mr-4 backdrop-blur-sm">
+                                        <span class="text-2xl">🎯</span>
+                                    </div>
+                                    الإنجازات
+                                </h3>
+                                <div class="bg-white/20 backdrop-blur-sm rounded-full px-4 py-2">
+                                    <span class="text-white font-bold">ممتاز</span>
+                                </div>
+                            </div>
+                            
+                            <div class="bg-white/20 backdrop-blur-sm rounded-2xl p-6">
+                                <p class="text-white text-xl leading-relaxed font-medium mb-4">${student.result}</p>
+                                <div class="flex items-center justify-between">
+                                    <div class="flex items-center space-x-4 space-x-reverse">
+                                        <div class="w-8 h-8 bg-white/20 rounded-full flex items-center justify-center">
+                                            <span class="text-white">✅</span>
+                                        </div>
+                                        <span class="text-white font-semibold">تم تحقيق الهدف</span>
+                                    </div>
+                                    <div class="text-white/80 text-sm">
+                                        ${new Date().toLocaleDateString('ar-SA')}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            `;
+        }
+
+        // Create media item
+        function createMediaItem(media) {
+            const mediaId = `media_${Date.now()}_${Math.random().toString(36).substr(2, 9)}`;
+            
+            if (media.type === 'image') {
+                return `
+                    <div class="media-item bg-white rounded-2xl shadow-xl overflow-hidden cursor-pointer"
+                         onclick="openLightbox('image', '${media.src}', '${media.caption}')">
+                        <div class="relative">
+                            <img src="${media.src}" 
+                                 alt="${media.caption}" 
+                                 class="w-full h-48 object-cover"
+                                 onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAwIiBoZWlnaHQ9IjE5MiIgdmlld0JveD0iMCAwIDIwMCAxOTIiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSIyMDAiIGhlaWdodD0iMTkyIiBmaWxsPSIjRjNGNEY2Ii8+CjxwYXRoIGQ9Ik04MCA2NEgxMjBWMTI4SDgwVjY0WiIgZmlsbD0iI0U1RTdFQiIvPgo8cGF0aCBkPSJNOTAgNzRIMTEwVjExOEg5MFY3NFoiIGZpbGw9IiM5QjlCQTUiLz4KPC9zdmc+Cg=='">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                                <span class="text-white text-2xl">🔍</span>
+                            </div>
+                        </div>
+                        <div class="p-4">
+                            <p class="text-sm font-bold text-gray-800">${media.caption}</p>
+                            <p class="text-xs text-gray-500 mt-1">اضغط للتكبير</p>
+                        </div>
+                    </div>
+                `;
+            } else if (media.type === 'video') {
+                return `
+                    <div class="media-item bg-white rounded-2xl shadow-xl overflow-hidden cursor-pointer"
+                         onclick="openLightbox('video', '${media.src}', '${media.caption}')">
+                        <div class="relative">
+                            <video class="w-full h-48 object-cover" muted>
+                                <source src="${media.src}" type="video/mp4">
+                            </video>
+                            <div class="absolute inset-0 flex items-center justify-center bg-black bg-opacity-20">
+                                <div class="w-16 h-16 bg-white bg-opacity-90 rounded-full flex items-center justify-center shadow-lg">
+                                    <svg class="w-8 h-8 text-gray-700" fill="currentColor" viewBox="0 0 20 20">
+                                        <path d="M8 5v10l8-5-8-5z"/>
+                                    </svg>
+                                </div>
+                            </div>
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                                <span class="text-white text-2xl">▶️</span>
+                            </div>
+                        </div>
+                        <div class="p-4">
+                            <p class="text-sm font-bold text-gray-800">${media.caption}</p>
+                            <p class="text-xs text-gray-500 mt-1">اضغط للمشاهدة</p>
+                        </div>
+                    </div>
+                `;
+            } else if (media.type === 'pdf') {
+                return `
+                    <div class="media-item bg-white rounded-2xl shadow-xl overflow-hidden hover:shadow-2xl transition-all duration-300">
+                        <a href="${media.src}" target="_blank" class="block">
+                            <div class="bg-gradient-to-br from-red-50 to-pink-50 h-48 flex items-center justify-center">
+                                <div class="text-center">
+                                    <div class="w-20 h-20 bg-red-500 rounded-full flex items-center justify-center mx-auto mb-4 shadow-lg">
+                                        <svg class="w-10 h-10 text-white" fill="currentColor" viewBox="0 0 20 20">
+                                            <path fill-rule="evenodd" d="M4 4a2 2 0 012-2h4.586A2 2 0 0112 2.586L15.414 6A2 2 0 0116 7.414V16a2 2 0 01-2 2H6a2 2 0 01-2-2V4zm2 6a1 1 0 011-1h6a1 1 0 110 2H7a1 1 0 01-1-1zm1 3a1 1 0 100 2h6a1 1 0 100-2H7z" clip-rule="evenodd"/>
+                                        </svg>
+                                    </div>
+                                    <p class="text-lg text-red-600 font-bold">ملف PDF</p>
+                                    <p class="text-sm text-red-500">اضغط للفتح</p>
+                                </div>
+                            </div>
+                            <div class="p-4">
+                                <p class="text-sm font-bold text-gray-800">${media.caption}</p>
+                                <p class="text-xs text-gray-500 mt-1">يفتح في نافذة جديدة</p>
+                            </div>
+                        </a>
+                    </div>
+                `;
+            }
+            return '';
+        }
+
+        // Open lightbox for media
+        function openLightbox(type, src, caption) {
+            lightboxImage.classList.add('hidden');
+            lightboxVideo.classList.add('hidden');
+            
+            if (type === 'image') {
+                lightboxImage.src = src;
+                lightboxImage.alt = caption;
+                lightboxImage.classList.remove('hidden');
+            } else if (type === 'video') {
+                lightboxVideo.src = src;
+                lightboxVideo.classList.remove('hidden');
+            }
+            
+            lightbox.style.display = 'block';
+            lightbox.classList.add('lightbox-enhanced');
+            document.body.style.overflow = 'hidden';
+        }
+
+        // Close lightbox
+        function closeLightboxFunc() {
+            lightbox.classList.remove('lightbox-enhanced');
+            setTimeout(() => {
+                lightbox.style.display = 'none';
+                document.body.style.overflow = 'auto';
+                lightboxVideo.pause();
+            }, 300);
+        }
+
+        // Setup event listeners
+        function setupEventListeners() {
+            // Close modal events
+            closeModal.addEventListener('click', () => {
+                studentModal.classList.add('hidden');
+                studentModal.classList.remove('modal-fade-in');
+                document.body.style.overflow = 'auto';
+            });
+
+            // Close modal when clicking outside
+            studentModal.addEventListener('click', (e) => {
+                if (e.target === studentModal) {
+                    studentModal.classList.add('hidden');
+                    studentModal.classList.remove('modal-fade-in');
+                    document.body.style.overflow = 'auto';
+                }
+            });
+
+            // Close lightbox events
+            closeLightbox.addEventListener('click', closeLightboxFunc);
+            lightbox.addEventListener('click', (e) => {
+                if (e.target === lightbox) {
+                    closeLightboxFunc();
+                }
+            });
+
+            // Keyboard navigation
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'Escape') {
+                    if (!studentModal.classList.contains('hidden')) {
+                        studentModal.classList.add('hidden');
+                        studentModal.classList.remove('modal-fade-in');
+                        document.body.style.overflow = 'auto';
+                    }
+                    if (lightbox.style.display === 'block') {
+                        closeLightboxFunc();
+                    }
+                }
+            });
+        }
+
+        // Photo Slider functionality
+        let currentModernSlide = 0;
+        const totalModernSlides = 8;
+        
+        function openPhotoSlider() {
+            document.getElementById('photoSliderModal').style.display = 'flex';
+            document.body.style.overflow = 'hidden';
+            createModernDots();
+        }
+        
+        function closePhotoSlider() {
+            document.getElementById('photoSliderModal').style.display = 'none';
+            document.body.style.overflow = 'auto';
+        }
+        
+        function changeModernSlide(direction) {
+            currentModernSlide += direction;
+            
+            if (currentModernSlide < 0) {
+                currentModernSlide = totalModernSlides - 1;
+            } else if (currentModernSlide >= totalModernSlides) {
+                currentModernSlide = 0;
+            }
+            
+            updateModernSlider();
+        }
+        
+        function updateModernSlider() {
+            const container = document.getElementById('modernSlides');
+            const dots = document.querySelectorAll('.modern-dot');
+            
+            // Move slider
+            container.style.transform = `translateX(-${currentModernSlide * 100}%)`;
+            
+            // Update dots
+            dots.forEach((dot, index) => {
+                dot.classList.toggle('active', index === currentModernSlide);
+            });
+        }
+        
+        function createModernDots() {
+            const dotsContainer = document.getElementById('modernDots');
+            dotsContainer.innerHTML = '';
+            
+            for (let i = 0; i < totalModernSlides; i++) {
+                const dot = document.createElement('div');
+                dot.className = 'modern-dot';
+                if (i === 0) dot.classList.add('active');
+                dot.onclick = () => {
+                    currentModernSlide = i;
+                    updateModernSlider();
+                };
+                dotsContainer.appendChild(dot);
+            }
+        }
+        
+        // Auto-play modern slider
+        function autoPlayModernSlider() {
+            setInterval(() => {
+                if (document.getElementById('photoSliderModal').style.display === 'flex') {
+                    changeModernSlide(1);
+                }
+            }, 5000); // Change slide every 5 seconds
+        }
+        
+        // Make functions globally available
+        window.openLightbox = openLightbox;
+        window.scrollToTop = scrollToTop;
+        window.openPhotoSlider = openPhotoSlider;
+        window.closePhotoSlider = closePhotoSlider;
+        window.changeModernSlide = changeModernSlide;
+
+        // Initialize the application when DOM is loaded
+        document.addEventListener('DOMContentLoaded', function() {
+            init();
+            autoPlayModernSlider();
+        });
+    </script>
+
+    <!-- Footer -->
+    <footer class="glass relative z-10 mt-12">
+        <div class="container mx-auto px-4 py-8">
+            <div class="text-center text-white">
+                <div class="mb-6">
+                    <h3 class="text-2xl font-bold mb-2">🎓 نظام إنجازات قسم التربية الخاصة</h3>
+                    <p class="text-lg opacity-90">مدرسة المعيريض الثانوية بنات</p>
+                    <p class="text-sm opacity-75">تطوير محلي - تصميم مبهر</p>
+                </div>
+                
+                <!-- Teacher Information -->
+                <div class="bg-white bg-opacity-10 rounded-2xl p-6 mb-6 backdrop-blur-sm border border-white border-opacity-20">
+                    <div class="flex items-center justify-center space-x-4 space-x-reverse mb-4">
+                        <div class="w-16 h-16 rounded-full overflow-hidden border-2 border-white">
+                            <img src="images/teachter2.png" alt="المعلمة ياسمين" class="w-full h-full object-cover">
+                        </div>
+                        <div class="text-right">
+                            <h4 class="text-lg font-bold text-white drop-shadow-lg">المعلمة المسؤولة</h4>
+                            <p class="text-sm text-white font-semibold drop-shadow-md">أ. ياسمين يحي محمود</p>
+                            <p class="text-xs text-white/90 font-medium drop-shadow-sm">معلمة التربية الخاصة</p>
+                        </div>
+                    </div>
+                    <div class="grid grid-cols-2 md:grid-cols-4 gap-4 text-sm">
+                        <div class="bg-white bg-opacity-10 rounded-lg p-3">
+                            <div class="text-lg font-bold text-yellow-300 drop-shadow-lg">6</div>
+                            <div class="text-white font-semibold drop-shadow-md">طالبات</div>
+                        </div>
+                        <div class="bg-white bg-opacity-10 rounded-lg p-3">
+                            <div class="text-lg font-bold text-green-300 drop-shadow-lg">100%</div>
+                            <div class="text-white font-semibold drop-shadow-md">متابعة</div>
+                        </div>
+                        <div class="bg-white bg-opacity-10 rounded-lg p-3">
+                            <div class="text-lg font-bold text-blue-400 drop-shadow-lg">15</div>
+                            <div class="text-white font-semibold drop-shadow-md">نشاط</div>
+                        </div>
+                        <div class="bg-white bg-opacity-10 rounded-lg p-3">
+                            <div class="text-lg font-bold text-purple-400 drop-shadow-lg">A+</div>
+                            <div class="text-white font-semibold drop-shadow-md">تقييم</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="flex justify-center space-x-6 space-x-reverse mb-4">
+                    <span class="bg-white bg-opacity-20 px-4 py-2 rounded-full text-sm font-medium">
+                        📱 رمز استجابة كيو آر كود سريع
+                    </span>
+                    <span class="bg-white bg-opacity-20 px-4 py-2 rounded-full text-sm font-medium">
+                        💻 نظام متطور بأحدث البرمجيات
+                    </span>
+                    <span class="bg-white bg-opacity-20 px-4 py-2 rounded-full text-sm font-medium">
+                        📱 متجاوب مع جميع الأجهزة
+                    </span>
+                </div>
+                <div class="bg-gradient-to-r from-purple-600 to-pink-600 rounded-2xl p-6 shadow-lg border-2 border-white/20 backdrop-blur-sm">
+                    <p class="text-sm text-white font-medium text-center">
+                        © تم التصميم والبرمجة بواسطة المعلمة أ. ياسمين يحي، جميع الحقوق محفوظة لمدرسة المعيريض للحلقة الثانية والثالثة - بنات لسنة 2025
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

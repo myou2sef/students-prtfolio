@@ -1,0 +1,1059 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>عائشة محمد - الملف الشخصي</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;900&display=swap" rel="stylesheet">
+    
+    <style>
+        * {
+            font-family: 'Cairo', sans-serif;
+        }
+        
+        body {
+            background-image: url('images/flag.jfif');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            min-height: 100vh;
+            margin: 0;
+            padding: 0;
+            position: relative;
+            overflow-x: hidden;
+        }
+        
+        /* طبقة شفافة فوق خلفية العلم */
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(102, 126, 234, 0.7), rgba(118, 75, 162, 0.6));
+            z-index: -1;
+        }
+        
+        /* أيقونات مدرسية متحركة */
+        .floating-icon {
+            position: absolute;
+            font-size: 2rem;
+            color: rgba(255, 255, 255, 0.3);
+            pointer-events: none;
+            z-index: 1;
+            animation: floatIcon 8s ease-in-out infinite;
+        }
+        
+        @keyframes floatIcon {
+            0%, 100% { 
+                transform: translateY(0px) rotate(0deg);
+                opacity: 0.3;
+            }
+            25% { 
+                transform: translateY(-20px) rotate(5deg);
+                opacity: 0.6;
+            }
+            50% { 
+                transform: translateY(-40px) rotate(0deg);
+                opacity: 0.8;
+            }
+            75% { 
+                transform: translateY(-20px) rotate(-5deg);
+                opacity: 0.6;
+            }
+        }
+        
+        .floating-icon:nth-child(1) { top: 10%; left: 5%; animation-delay: 0s; }
+        .floating-icon:nth-child(2) { top: 20%; left: 15%; animation-delay: 1s; }
+        .floating-icon:nth-child(3) { top: 30%; left: 25%; animation-delay: 2s; }
+        .floating-icon:nth-child(4) { top: 40%; left: 35%; animation-delay: 3s; }
+        .floating-icon:nth-child(5) { top: 50%; left: 45%; animation-delay: 4s; }
+        .floating-icon:nth-child(6) { top: 60%; left: 55%; animation-delay: 5s; }
+        .floating-icon:nth-child(7) { top: 70%; left: 65%; animation-delay: 6s; }
+        .floating-icon:nth-child(8) { top: 80%; left: 75%; animation-delay: 7s; }
+        .floating-icon:nth-child(9) { top: 15%; right: 10%; animation-delay: 1.5s; }
+        .floating-icon:nth-child(10) { top: 25%; right: 20%; animation-delay: 2.5s; }
+        .floating-icon:nth-child(11) { top: 35%; right: 30%; animation-delay: 3.5s; }
+        .floating-icon:nth-child(12) { top: 45%; right: 40%; animation-delay: 4.5s; }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+        
+        .header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+        
+        .title {
+            font-size: 2.5rem;
+            font-weight: 900;
+            color: white;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+        
+        .subtitle {
+            font-size: 1.2rem;
+            color: rgba(255, 255, 255, 0.8);
+        }
+        
+        .profile-card {
+            background: linear-gradient(145deg, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.1));
+            backdrop-filter: blur(15px);
+            border: 3px solid rgba(255, 255, 255, 0.3);
+            border-radius: 25px;
+            padding: 1.5rem;
+            text-align: center;
+            margin-bottom: 2rem;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.3);
+            transition: all 0.4s ease;
+            animation: cardFloat 6s ease-in-out infinite;
+            position: relative;
+            z-index: 2;
+            max-width: 400px;
+            margin: 0 auto 2rem auto;
+        }
+        
+        /* تأثير زجاجي للبطاقة */
+        .profile-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(145deg, rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.1));
+            backdrop-filter: blur(20px);
+            border-radius: 25px;
+            z-index: -1;
+        }
+        
+        /* تأثيرات abstracts للبطاقة */
+        .profile-card::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+            animation: abstractRotate 8s linear infinite;
+            z-index: -1;
+        }
+        
+        .profile-card::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at 30% 20%, rgba(102, 126, 234, 0.3), transparent 50%),
+                        radial-gradient(circle at 70% 80%, rgba(118, 75, 162, 0.3), transparent 50%);
+            border-radius: 25px;
+            z-index: -1;
+            animation: abstractPulse 4s ease-in-out infinite;
+        }
+        
+        @keyframes abstractRotate {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        
+        @keyframes abstractPulse {
+            0%, 100% { opacity: 0.3; }
+            50% { opacity: 0.6; }
+        }
+        
+        @keyframes cardFloat {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            25% { transform: translateY(-5px) rotate(0.5deg); }
+            50% { transform: translateY(-8px) rotate(0deg); }
+            75% { transform: translateY(-3px) rotate(-0.5deg); }
+        }
+        
+        .profile-card:hover {
+            transform: scale(1.02) rotate(1deg);
+            box-shadow: 0 20px 50px rgba(0,0,0,0.4);
+            border-color: rgba(255, 255, 255, 0.5);
+            animation-play-state: paused;
+        }
+        
+        .avatar {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            margin: 0 auto 1rem;
+            border: 4px solid rgba(255, 255, 255, 0.3);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+            transition: all 0.4s ease;
+            animation: avatarFloat 4s ease-in-out infinite;
+        }
+        
+        @keyframes avatarFloat {
+            0%, 100% { transform: translateY(0px) scale(1); }
+            50% { transform: translateY(-5px) scale(1.02); }
+        }
+        
+        .avatar:hover {
+            transform: scale(1.05) rotate(5deg);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.4);
+            border-color: rgba(255, 255, 255, 0.6);
+        }
+        
+        .name {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: white;
+            margin-bottom: 0.5rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+            animation: nameGlow 3s ease-in-out infinite;
+        }
+        
+        @keyframes nameGlow {
+            0%, 100% { text-shadow: 2px 2px 4px rgba(0,0,0,0.3); }
+            50% { text-shadow: 0 0 20px rgba(255, 255, 255, 0.5), 2px 2px 4px rgba(0,0,0,0.3); }
+        }
+        
+        .class {
+            font-size: 1.2rem;
+            color: rgba(255, 255, 255, 0.8);
+            margin-bottom: 0.5rem;
+        }
+        
+        .school {
+            font-size: 1rem;
+            color: rgba(255, 255, 255, 0.9);
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.1));
+            padding: 0.5rem 1rem;
+            border-radius: 10px;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+        }
+        
+        .description {
+            font-size: 1rem;
+            color: rgba(255, 255, 255, 0.7);
+        }
+        
+        .sections-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        
+        .section {
+            background: linear-gradient(145deg, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.1));
+            backdrop-filter: blur(15px);
+            border: 3px solid rgba(255, 255, 255, 0.3);
+            border-radius: 20px;
+            padding: 2.5rem;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.4s ease;
+            animation: sectionFloat 8s ease-in-out infinite;
+            position: relative;
+            z-index: 2;
+        }
+        
+        @keyframes sectionFloat {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            25% { transform: translateY(-3px) rotate(0.3deg); }
+            50% { transform: translateY(-5px) rotate(0deg); }
+            75% { transform: translateY(-2px) rotate(-0.3deg); }
+        }
+        
+        .section:hover {
+            background: linear-gradient(145deg, rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.2));
+            transform: translateY(-8px) scale(1.02) rotate(1deg);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.4);
+            border-color: rgba(255, 255, 255, 0.5);
+            animation-play-state: paused;
+        }
+        
+        .section-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+        
+        .section-title {
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: white;
+            margin-bottom: 0.5rem;
+        }
+        
+        .section-description {
+            color: rgba(255, 255, 255, 0.8);
+            font-size: 0.9rem;
+        }
+        
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(102, 126, 234, 0.9), rgba(118, 75, 162, 0.8));
+            z-index: 3000;
+            backdrop-filter: blur(15px);
+        }
+        
+        .modal-content {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: linear-gradient(145deg, rgba(255, 255, 255, 0.25), rgba(255, 255, 255, 0.15));
+            backdrop-filter: blur(30px);
+            border: 4px solid rgba(255, 255, 255, 0.4);
+            border-radius: 25px;
+            padding: 3rem;
+            max-width: 95%;
+            max-height: 95%;
+            overflow: auto;
+            box-shadow: 0 30px 60px rgba(0,0,0,0.5);
+            animation: modalSlideIn 0.6s ease-out;
+        }
+        
+        @keyframes modalSlideIn {
+            0% { 
+                transform: translate(-50%, -50%) scale(0.7) rotate(-5deg);
+                opacity: 0;
+            }
+            100% { 
+                transform: translate(-50%, -50%) scale(1) rotate(0deg);
+                opacity: 1;
+            }
+        }
+        
+        .close-btn {
+            position: absolute;
+            top: 30px;
+            right: 30px;
+            background: linear-gradient(145deg, rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.1));
+            border: 3px solid rgba(255, 255, 255, 0.4);
+            border-radius: 50%;
+            width: 60px;
+            height: 60px;
+            color: white;
+            font-size: 24px;
+            cursor: pointer;
+            transition: all 0.4s ease;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+            animation: closeButtonFloat 3s ease-in-out infinite;
+            z-index: 10;
+        }
+        
+        @keyframes closeButtonFloat {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-5px); }
+        }
+        
+        .close-btn:hover {
+            background: linear-gradient(145deg, rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.3));
+            transform: rotate(90deg) scale(1.1);
+            box-shadow: 0 12px 30px rgba(0,0,0,0.4);
+            animation-play-state: paused;
+        }
+        
+        .achievement-item {
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 10px;
+            padding: 1rem;
+            margin: 0.5rem 0;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+        
+        .achievement-item:hover {
+            background: rgba(255, 255, 255, 0.2);
+        }
+        
+        /* معرض الصور الجديد */
+        .photo-gallery-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.9);
+            z-index: 2000;
+            backdrop-filter: blur(10px);
+        }
+        
+        .gallery-modal-content {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(145deg, rgba(102, 126, 234, 0.2), rgba(118, 75, 162, 0.15));
+            backdrop-filter: blur(30px);
+            border: 4px solid rgba(255, 255, 255, 0.4);
+            border-radius: 0;
+            padding: 3rem;
+            overflow: auto;
+            animation: gallerySlideIn 0.5s ease-out;
+            box-shadow: 0 0 60px rgba(0,0,0,0.6);
+        }
+        
+        @keyframes gallerySlideIn {
+            0% { transform: scale(0.8); opacity: 0; }
+            100% { transform: scale(1); opacity: 1; }
+        }
+        
+        .gallery-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 3rem;
+            padding: 2rem 0;
+            border-bottom: 3px solid rgba(255, 255, 255, 0.3);
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+            border-radius: 15px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .gallery-header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            animation: headerShimmer 3s ease-in-out infinite;
+        }
+        
+        @keyframes headerShimmer {
+            0% { left: -100%; }
+            50% { left: 100%; }
+            100% { left: 100%; }
+        }
+        
+        .gallery-title {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: white;
+            text-shadow: 3px 3px 6px rgba(0,0,0,0.5);
+            animation: titleGlow 4s ease-in-out infinite;
+            position: relative;
+            z-index: 2;
+            margin-right: 100px;
+        }
+        
+        @keyframes titleGlow {
+            0%, 100% { 
+                text-shadow: 3px 3px 6px rgba(0,0,0,0.5);
+                transform: scale(1);
+            }
+            50% { 
+                text-shadow: 0 0 30px rgba(255, 255, 255, 0.8), 3px 3px 6px rgba(0,0,0,0.5);
+                transform: scale(1.02);
+            }
+        }
+        
+        .gallery-close {
+            background: linear-gradient(145deg, rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.1));
+            border: 3px solid rgba(255, 255, 255, 0.4);
+            border-radius: 50%;
+            width: 70px;
+            height: 70px;
+            color: white;
+            font-size: 28px;
+            cursor: pointer;
+            transition: all 0.4s ease;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.4);
+            position: relative;
+            z-index: 2;
+            animation: closeButtonPulse 2s ease-in-out infinite;
+        }
+        
+        @keyframes closeButtonPulse {
+            0%, 100% { 
+                box-shadow: 0 8px 20px rgba(0,0,0,0.4);
+                transform: scale(1);
+            }
+            50% { 
+                box-shadow: 0 12px 30px rgba(0,0,0,0.6);
+                transform: scale(1.05);
+            }
+        }
+        
+        .gallery-close:hover {
+            background: linear-gradient(145deg, rgba(255, 255, 255, 0.6), rgba(255, 255, 255, 0.4));
+            transform: rotate(90deg) scale(1.2);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.6);
+            animation-play-state: paused;
+        }
+        
+        /* تأثيرات القلوب */
+        .heart {
+            position: absolute;
+            font-size: 24px;
+            color: #ff6b6b;
+            pointer-events: none;
+            z-index: 1000;
+            animation: heartFloat 3s ease-out forwards;
+        }
+        
+        @keyframes heartFloat {
+            0% {
+                opacity: 1;
+                transform: translateY(0px) scale(0.5);
+            }
+            50% {
+                opacity: 0.8;
+                transform: translateY(-50px) scale(1);
+            }
+            100% {
+                opacity: 0;
+                transform: translateY(-100px) scale(1.2);
+            }
+        }
+        
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            grid-auto-rows: 250px;
+        }
+        
+        .gallery-item {
+            position: relative;
+            border-radius: 20px;
+            overflow: hidden;
+            cursor: pointer;
+            transition: all 0.4s ease;
+            background: linear-gradient(145deg, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.1));
+            border: 3px solid rgba(255, 255, 255, 0.3);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            animation: photoFloat 6s ease-in-out infinite;
+        }
+        
+        @keyframes photoFloat {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            25% { transform: translateY(-5px) rotate(1deg); }
+            50% { transform: translateY(-8px) rotate(0deg); }
+            75% { transform: translateY(-3px) rotate(-1deg); }
+        }
+        
+        .gallery-item:nth-child(odd) {
+            animation-delay: 0.5s;
+        }
+        
+        .gallery-item:nth-child(even) {
+            animation-delay: 1s;
+        }
+        
+        .gallery-item:nth-child(3n) {
+            animation-delay: 1.5s;
+        }
+        
+        .gallery-item:hover {
+            transform: scale(1.1) rotate(3deg) translateY(-10px);
+            box-shadow: 0 20px 50px rgba(0,0,0,0.5);
+            border-color: rgba(255, 255, 255, 0.6);
+            z-index: 10;
+            animation-play-state: paused;
+        }
+        
+        .gallery-item::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+            transition: left 0.6s ease;
+            z-index: 1;
+        }
+        
+        .gallery-item:hover::before {
+            left: 100%;
+        }
+        
+        .gallery-item::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 0;
+            height: 0;
+            background: radial-gradient(circle, rgba(255, 255, 255, 0.3), transparent);
+            border-radius: 50%;
+            transition: all 0.4s ease;
+            z-index: 2;
+        }
+        
+        .gallery-item:hover::after {
+            width: 200px;
+            height: 200px;
+        }
+        
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: all 0.4s ease;
+            filter: brightness(0.9) contrast(1.1);
+        }
+        
+        .gallery-item:hover img {
+            transform: scale(1.05);
+            filter: brightness(1.1) contrast(1.2) saturate(1.2);
+        }
+    </style>
+</head>
+<body>
+    <!-- أيقونات مدرسية متحركة -->
+    <div class="floating-icon">📚</div>
+    <div class="floating-icon">✏️</div>
+    <div class="floating-icon">📝</div>
+    <div class="floating-icon">🎓</div>
+    <div class="floating-icon">📖</div>
+    <div class="floating-icon">🖊️</div>
+    <div class="floating-icon">📋</div>
+    <div class="floating-icon">🎒</div>
+    <div class="floating-icon">📐</div>
+    <div class="floating-icon">🔬</div>
+    <div class="floating-icon">🎨</div>
+    <div class="floating-icon">🏆</div>
+    
+    <!-- زر الرجوع -->
+    <div class="fixed top-4 left-4 z-50">
+        <a href="index.html" class="bg-gradient-to-r from-blue-600 to-purple-600 text-white px-6 py-3 rounded-full font-bold shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300 flex items-center gap-2" style="
+            animation: closeButtonFloat 3s ease-in-out infinite;
+            backdrop-filter: blur(10px);
+            border: 2px solid rgba(255, 255, 255, 0.3);
+        ">
+            <span class="text-xl">🏠</span>
+            <span>العودة للصفحة الرئيسية</span>
+        </a>
+    </div>
+
+    <div class="container">
+        <!-- العنوان -->
+        <div class="header">
+            <h1 class="title">🎨 شجرة إنجازات عائشة 🎨</h1>
+            <p class="subtitle">كل فرع يحمل إنجازاً في الرسم والإبداع الفني</p>
+        </div>
+        
+        <!-- بطاقة الملف الشخصي -->
+        <div class="profile-card">
+            <img src="images/عائشة عبدالله.png" alt="عائشة محمد" class="avatar">
+            <h2 class="name">عائشة محمد</h2>
+            <p class="class">الصف السادس ٢</p>
+            <p class="school">مدرسة المعيريض للحلقة الثانية والثالثة بنات</p>
+            <p class="description">طالبة متميزة وموهوبة في الرسم</p>
+        </div>
+        
+        <!-- أقسام الشجرة -->
+        <div class="sections-grid">
+            <!-- معرض الصور -->
+            <div class="section" onclick="openGallery()">
+                <div class="section-icon">📸</div>
+                <h3 class="section-title">معرض الصور</h3>
+                <p class="section-description">مجموعة رائعة من صور الإنجازات</p>
+            </div>
+            
+            <!-- الفيديوهات -->
+            <div class="section" onclick="openVideos()">
+                <div class="section-icon">🎥</div>
+                <h3 class="section-title">الفيديوهات</h3>
+                <p class="section-description">فيديوهات توثق الإنجازات</p>
+            </div>
+            
+            <!-- الأعمال الفنية -->
+            <div class="section" onclick="openWorks()">
+                <div class="section-icon">🎨</div>
+                <h3 class="section-title">الأعمال الفنية</h3>
+                <p class="section-description">لوحات فنية وإبداعات متنوعة</p>
+            </div>
+            
+            <!-- الإنجازات -->
+            <div class="section" onclick="openAchievements()">
+                <div class="section-icon">🏆</div>
+                <h3 class="section-title">الإنجازات</h3>
+                <p class="section-description">جوائز وشهادات متميزة</p>
+            </div>
+            
+            <!-- المعلومات الشخصية -->
+            <div class="section" onclick="openInfo()">
+                <div class="section-icon">👤</div>
+                <h3 class="section-title">المعلومات الشخصية</h3>
+                <p class="section-description">تفاصيل شخصية عن عائشة</p>
+            </div>
+            
+            <!-- المهارات والتطوير -->
+            <div class="section" onclick="openSkills()">
+                <div class="section-icon">🔬</div>
+                <h3 class="section-title">المهارات والتطوير</h3>
+                <p class="section-description">مهارات في الرسم والتعبير الفني</p>
+            </div>
+        </div>
+    </div>
+    
+    <!-- نافذة عرض الصورة -->
+    <div id="imageModal" class="modal">
+        <div class="modal-content">
+            <button class="close-btn" onclick="closeModal('imageModal')">✕</button>
+            <div id="imageDisplay" class="text-center"></div>
+        </div>
+    </div>
+    
+    <!-- نافذة معرض الصور الجديدة -->
+    <div id="photoGalleryModal" class="photo-gallery-modal">
+        <div class="gallery-modal-content">
+            <!-- قلوب متحركة -->
+            <div class="heart">💖</div>
+            <div class="heart">💕</div>
+            <div class="heart">💗</div>
+            <div class="heart">💝</div>
+            <div class="heart">💘</div>
+            <div class="heart">💓</div>
+            <div class="heart">💞</div>
+            <div class="heart">💟</div>
+            
+            <div class="gallery-header">
+                <h3 class="gallery-title">🎨 مكتبة الوسائط لإنجازات الطالبة عائشة محمد</h3>
+                <button class="gallery-close" onclick="closePhotoGallery()">✕</button>
+            </div>
+            
+            <div class="gallery-grid">
+                <div class="gallery-item" onclick="openImage('images/aisha mohamed/WhatsApp Image 2025-09-28 at 11.08.20 PM.jpeg', 'عائشة تشارك في الأنشطة الفنية')">
+                    <img src="images/aisha mohamed/WhatsApp Image 2025-09-28 at 11.08.20 PM.jpeg" alt="صورة 1">
+                </div>
+                
+                <div class="gallery-item" onclick="openImage('images/aisha mohamed/WhatsApp Image 2025-09-28 at 11.09.01 PM.jpeg', 'عائشة ترسم لوحة فنية جميلة')">
+                    <img src="images/aisha mohamed/WhatsApp Image 2025-09-28 at 11.09.01 PM.jpeg" alt="صورة 2">
+                </div>
+                
+                <div class="gallery-item" onclick="openImage('images/aisha mohamed/WhatsApp Image 2025-09-28 at 11.09.15 PM.jpeg', 'إبداع عائشة في التلوين')">
+                    <img src="images/aisha mohamed/WhatsApp Image 2025-09-28 at 11.09.15 PM.jpeg" alt="صورة 3">
+                </div>
+                
+                <div class="gallery-item" onclick="openImage('images/aisha mohamed/WhatsApp Image 2025-09-28 at 11.10.42 PM.jpeg', 'عائشة تعرض أعمالها الفنية')">
+                    <img src="images/aisha mohamed/WhatsApp Image 2025-09-28 at 11.10.42 PM.jpeg" alt="صورة 4">
+                </div>
+                
+                <div class="gallery-item" onclick="openImage('images/aisha mohamed/WhatsApp Image 2025-09-28 at 11.11.53 PM.jpeg', 'لوحة فنية متميزة')">
+                    <img src="images/aisha mohamed/WhatsApp Image 2025-09-28 at 11.11.53 PM.jpeg" alt="صورة 5">
+                </div>
+                
+                <div class="gallery-item" onclick="openImage('images/aisha mohamed/WhatsApp Image 2025-09-28 at 11.14.02 PM.jpeg', 'عائشة تشارك في المعرض الفني')">
+                    <img src="images/aisha mohamed/WhatsApp Image 2025-09-28 at 11.14.02 PM.jpeg" alt="صورة 6">
+                </div>
+                
+                <div class="gallery-item" onclick="openImage('images/aisha mohamed/WhatsApp Image 2025-09-28 at 11.14.03 PM.jpeg', 'إنجاز فني جديد')">
+                    <img src="images/aisha mohamed/WhatsApp Image 2025-09-28 at 11.14.03 PM.jpeg" alt="صورة 7">
+                </div>
+                
+                <div class="gallery-item" onclick="openImage('images/aisha mohamed/WhatsApp Image 2025-09-28 at 11.16.25 PM.jpeg', 'عائشة تحتفل بإنجازاتها')">
+                    <img src="images/aisha mohamed/WhatsApp Image 2025-09-28 at 11.16.25 PM.jpeg" alt="صورة 8">
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- نافذة الفيديوهات -->
+    <div id="videoModal" class="modal">
+        <div class="modal-content">
+            <button class="close-btn" onclick="closeModal('videoModal')">✕</button>
+            <h2 class="text-2xl font-bold text-white mb-4 text-center">🎥 الفيديوهات</h2>
+            <div class="text-white">
+                <div class="achievement-item">
+                    <div class="text-3xl">🎬</div>
+                    <div>
+                        <h3 class="text-lg font-bold">عائشة تشارك في الأنشطة الفنية</h3>
+                        <p class="text-white/80">فيديو يوثق مشاركة عائشة في الأنشطة الفنية والإبداعية</p>
+                        <video controls class="w-full rounded-lg mt-2" style="max-height: 300px;">
+                            <source src="videos/aisha mohamed/WhatsApp Video 2025-09-28 at 11.09.09 PM.mp4" type="video/mp4">
+                            متصفحك لا يدعم تشغيل الفيديو
+                        </video>
+                    </div>
+                </div>
+                <div class="achievement-item">
+                    <div class="text-3xl">📹</div>
+                    <div>
+                        <h3 class="text-lg font-bold">عائشة تعرض أعمالها الفنية</h3>
+                        <p class="text-white/80">فيديو يوضح عائشة وهي تعرض أعمالها الفنية المتميزة</p>
+                        <video controls class="w-full rounded-lg mt-2" style="max-height: 300px;">
+                            <source src="videos/aisha mohamed/WhatsApp Video 2025-09-28 at 11.10.19 PM.mp4" type="video/mp4">
+                            متصفحك لا يدعم تشغيل الفيديو
+                        </video>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- نافذة الأعمال -->
+    <div id="worksModal" class="modal">
+        <div class="modal-content">
+            <button class="close-btn" onclick="closeModal('worksModal')">✕</button>
+            <h2 class="text-2xl font-bold text-white mb-4 text-center">🎨 الأعمال الفنية</h2>
+            <div class="text-white">
+                <div class="achievement-item">
+                    <div class="text-3xl">🎨</div>
+                    <div>
+                        <h3 class="text-lg font-bold">الرسم والتلوين</h3>
+                        <p class="text-white/80">أظهرت عائشة موهبة واضحة في الرسم والتلوين، حيث استطاعت إنتاج لوحات فنية متميزة تعكس إبداعها وقدرتها على التعبير عن مشاعرها وأفكارها من خلال الفن.</p>
+                    </div>
+                </div>
+                <div class="achievement-item">
+                    <div class="text-3xl">🖼️</div>
+                    <div>
+                        <h3 class="text-lg font-bold">المشاركة في الأنشطة</h3>
+                        <p class="text-white/80">شاركت في أنشطة مدرسية ومعارض فنية صغيرة داخل المدرسة، وحصلت على إشادة من المعلمين والطلاب على دقتها في التفاصيل وحسن اختيار الألوان.</p>
+                    </div>
+                </div>
+                <div class="achievement-item">
+                    <div class="text-3xl">🌟</div>
+                    <div>
+                        <h3 class="text-lg font-bold">تطوير الأسلوب</h3>
+                        <p class="text-white/80">بدأت في تطوير أسلوبها الخاص في الرسم، حيث تميل إلى رسم الطبيعة والشخصيات الكرتونية، مما يعكس خيالها الواسع وقدرتها على الإبداع.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- نافذة الإنجازات -->
+    <div id="achievementsModal" class="modal">
+        <div class="modal-content">
+            <button class="close-btn" onclick="closeModal('achievementsModal')">✕</button>
+            <h2 class="text-2xl font-bold text-white mb-4 text-center">🏆 الإنجازات والجوائز</h2>
+            <div class="text-white">
+                <div class="achievement-item">
+                    <div class="text-4xl">🌟</div>
+                    <div>
+                        <h3 class="text-xl font-bold">🌟 الإنجازات الفنية</h3>
+                        <p class="text-white/80">أظهرت الطالبة موهبة واضحة في الرسم والتلوين، حيث استطاعت إنتاج لوحات فنية متميزة تعكس إبداعها وقدرتها على التعبير عن مشاعرها وأفكارها من خلال الفن.</p>
+                    </div>
+                </div>
+                <div class="achievement-item">
+                    <div class="text-4xl">🏅</div>
+                    <div>
+                        <h3 class="text-xl font-bold">المشاركة والإشادة</h3>
+                        <p class="text-white/80">شاركت في أنشطة مدرسية ومعارض فنية صغيرة داخل المدرسة، وحصلت على إشادة من المعلمين والطلاب على دقتها في التفاصيل وحسن اختيار الألوان.</p>
+                    </div>
+                </div>
+                <div class="achievement-item">
+                    <div class="text-4xl">🎯</div>
+                    <div>
+                        <h3 class="text-xl font-bold">تطوير الأسلوب</h3>
+                        <p class="text-white/80">بدأت في تطوير أسلوبها الخاص في الرسم، حيث تميل إلى رسم الطبيعة والشخصيات الكرتونية، مما يعكس خيالها الواسع وقدرتها على الإبداع.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- نافذة المعلومات الشخصية -->
+    <div id="infoModal" class="modal">
+        <div class="modal-content">
+            <button class="close-btn" onclick="closeModal('infoModal')">✕</button>
+            <h2 class="text-2xl font-bold text-white mb-4 text-center">👤 المعلومات الشخصية</h2>
+            <div class="text-white grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div class="achievement-item">
+                    <div class="text-3xl">📅</div>
+                    <div>
+                        <h3 class="text-lg font-bold">تاريخ الميلاد</h3>
+                        <p class="text-white/80">9/7/2013</p>
+                    </div>
+                </div>
+                <div class="achievement-item">
+                    <div class="text-3xl">🇦🇪</div>
+                    <div>
+                        <h3 class="text-lg font-bold">الجنسية</h3>
+                        <p class="text-white/80">الإمارات العربية المتحدة</p>
+                    </div>
+                </div>
+                <div class="achievement-item">
+                    <div class="text-3xl">🎭</div>
+                    <div>
+                        <h3 class="text-lg font-bold">المجال المتميز</h3>
+                        <p class="text-white/80">الرسم والإبداع الفني</p>
+                    </div>
+                </div>
+                <div class="achievement-item">
+                    <div class="text-3xl">⭐</div>
+                    <div>
+                        <h3 class="text-lg font-bold">التقدير</h3>
+                        <p class="text-white/80">ممتاز</p>
+                    </div>
+                </div>
+                <div class="achievement-item">
+                    <div class="text-3xl">🎯</div>
+                    <div>
+                        <h3 class="text-lg font-bold">الخطة القادمة</h3>
+                        <p class="text-white/80">تشجيع الطالبة على المشاركة في أنشطة فنية خارج الصف لزيادة ثقتها بنفسها. دمج القصص المصورة مع تدريبات القراءة لدعم تقدمها في مهارات اللغة. الاستمرار في متابعة تقدمها شهريًا وتوثيق التحسن بالأعمال الفنية والنصوص المقروءة.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- نافذة المهارات -->
+    <div id="skillsModal" class="modal">
+        <div class="modal-content">
+            <button class="close-btn" onclick="closeModal('skillsModal')">✕</button>
+            <h2 class="text-2xl font-bold text-white mb-4 text-center">📚 المهارات والتطوير</h2>
+            <div class="text-white">
+                <div class="achievement-item">
+                    <div class="text-4xl">📚</div>
+                    <div>
+                        <h3 class="text-xl font-bold">📖 التحسن في مهارة القراءة</h3>
+                        <p class="text-white/80">في بداية العام الدراسي كانت تواجه صعوبات في التعرف على بعض الحروف وقراءتها بطلاقة. من خلال خطة تعليمية فردية تضمنت التدريب على القراءة الجهرية واستخدام الوسائل البصرية، أظهرت الطالبة تحسنًا تدريجيًا ملحوظًا.</p>
+                    </div>
+                </div>
+                <div class="achievement-item">
+                    <div class="text-4xl">🧠</div>
+                    <div>
+                        <h3 class="text-xl font-bold">الارتباط الإيجابي</h3>
+                        <p class="text-white/80">تبيّن وجود ارتباط إيجابي بين ممارستها للرسم واهتمامها بالقراءة، حيث أصبحت أكثر تحفيزًا للتعلم حينما تُدمج الأنشطة الفنية مع أنشطة القراءة.</p>
+                    </div>
+                </div>
+                <div class="achievement-item">
+                    <div class="text-4xl">🚀</div>
+                    <div>
+                        <h3 class="text-xl font-bold">الثقة بالنفس</h3>
+                        <p class="text-white/80">أصبحت قادرة الآن على قراءة كلمات وجمل قصيرة بشكل أفضل، مع ارتفاع مستوى الثقة بالنفس أثناء القراءة أمام زميلاتها.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // فتح معرض الصور الجديد
+        function openGallery() {
+            document.getElementById('photoGalleryModal').style.display = 'block';
+            createHearts();
+        }
+        
+        // إنشاء قلوب متحركة
+        function createHearts() {
+            const modal = document.getElementById('photoGalleryModal');
+            const hearts = ['💖', '💕', '💗', '💝', '💘', '💓', '💞', '💟', '❤️', '🧡', '💛', '💚', '💙', '💜'];
+            
+            // إزالة القلوب القديمة
+            const existingHearts = modal.querySelectorAll('.heart');
+            existingHearts.forEach(heart => heart.remove());
+            
+            // إنشاء قلوب جديدة
+            for (let i = 0; i < 12; i++) {
+                setTimeout(() => {
+                    const heart = document.createElement('div');
+                    heart.className = 'heart';
+                    heart.innerHTML = hearts[Math.floor(Math.random() * hearts.length)];
+                    heart.style.left = Math.random() * 90 + '%';
+                    heart.style.top = Math.random() * 50 + 50 + '%';
+                    heart.style.animationDelay = Math.random() * 2 + 's';
+                    modal.appendChild(heart);
+                    
+                    // إزالة القلب بعد انتهاء الحركة
+                    setTimeout(() => {
+                        if (heart.parentNode) {
+                            heart.remove();
+                        }
+                    }, 3000);
+                }, i * 200);
+            }
+        }
+        
+        // إغلاق معرض الصور
+        function closePhotoGallery() {
+            document.getElementById('photoGalleryModal').style.display = 'none';
+            // إزالة القلوب عند الإغلاق
+            const hearts = document.querySelectorAll('.heart');
+            hearts.forEach(heart => heart.remove());
+        }
+        
+        // فتح الفيديوهات
+        function openVideos() {
+            document.getElementById('videoModal').style.display = 'block';
+        }
+        
+        // فتح الأعمال
+        function openWorks() {
+            document.getElementById('worksModal').style.display = 'block';
+        }
+        
+        // فتح الإنجازات
+        function openAchievements() {
+            document.getElementById('achievementsModal').style.display = 'block';
+        }
+        
+        // فتح المعلومات الشخصية
+        function openInfo() {
+            document.getElementById('infoModal').style.display = 'block';
+        }
+        
+        // فتح المهارات
+        function openSkills() {
+            document.getElementById('skillsModal').style.display = 'block';
+        }
+        
+        // إغلاق النافذة
+        function closeModal(modalId) {
+            document.getElementById(modalId).style.display = 'none';
+        }
+        
+        // فتح صورة
+        function openImage(src, title) {
+            const imageDisplay = document.getElementById('imageDisplay');
+            imageDisplay.innerHTML = `
+                <h3 class="text-3xl font-bold text-white mb-6 text-center" style="
+                    background: linear-gradient(135deg, rgba(102, 126, 234, 0.3), rgba(118, 75, 162, 0.2));
+                    padding: 1.5rem;
+                    border-radius: 15px;
+                    backdrop-filter: blur(15px);
+                    border: 3px solid rgba(255, 255, 255, 0.4);
+                    text-shadow: 3px 3px 6px rgba(0,0,0,0.7);
+                    box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+                    animation: titleGlow 3s ease-in-out infinite;
+                    margin-top: 80px;
+                    margin-right: 100px;
+                ">${title}</h3>
+                <img src="${src}" alt="${title}" class="max-w-full max-h-96 rounded-lg mx-auto" style="
+                    border-radius: 20px;
+                    box-shadow: 0 15px 40px rgba(0,0,0,0.4);
+                    border: 3px solid rgba(255, 255, 255, 0.3);
+                    animation: imageFloat 4s ease-in-out infinite;
+                    transition: all 0.5s ease;
+                " onmouseover="this.style.transform='scale(1.05) rotate(1deg)'; this.style.boxShadow='0 20px 50px rgba(0,0,0,0.5)'; this.style.borderColor='rgba(255, 255, 255, 0.6)'; this.style.animationPlayState='paused';" 
+                     onmouseout="this.style.transform='scale(1) rotate(0deg)'; this.style.boxShadow='0 15px 40px rgba(0,0,0,0.4)'; this.style.borderColor='rgba(255, 255, 255, 0.3)'; this.style.animationPlayState='running';">
+            `;
+            document.getElementById('imageModal').style.display = 'block';
+        }
+        
+        // إغلاق النافذة عند النقر خارجها
+        window.onclick = function(event) {
+            const modals = document.querySelectorAll('.modal');
+            modals.forEach(modal => {
+                if (event.target === modal) {
+                    modal.style.display = 'none';
+                }
+            });
+        }
+    </script>
+</body>
+</html>
